@@ -1,0 +1,336 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html class="js" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr"><head profile="http://www.w3.org/1999/xhtml/vocab">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="shortlink" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/node/42">
+<link rel="canonical" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-1">
+<script type="text/x-mathjax-config;executed=true">MathJax.Hub.Config({
+  extensions: ['tex2jax.js'],
+  jax: ['input/TeX','output/HTML-CSS'],
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  showProcessingMessages: false,
+  messageStyle: 'none'
+});</script><meta name="Generator" content="Drupal 7 (http://drupal.org)">
+  <title>Lab 1 | COSMOS Cluster 7</title>
+  <style type="text/css" media="all">@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/system/system.base.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/system/system.menus.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/system/system.messages.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/system/system.theme.css?nbsqcz");</style>
+<style type="text/css" media="all">@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/comment/comment.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/field/theme/field.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/node/node.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/poll/poll.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/search/search.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/user/user.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/forum/forum.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/sites/all/modules/views/css/views.css?nbsqcz");</style>
+<style type="text/css" media="all">@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/sites/all/modules/ctools/css/ctools.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/sites/all/modules/webform/css/webform.css?nbsqcz");</style>
+<style type="text/css" media="all">@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/sites/all/themes/bsoe/style.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/sites/all/themes/bsoe/menu.css?nbsqcz");</style>
+  <script type="text/javascript" src="Lab%201%20%7C%20COSMOS%20Cluster%207_files/jquery_002.js"></script>
+<script type="text/javascript" src="Lab%201%20%7C%20COSMOS%20Cluster%207_files/jquery.js"></script>
+<script type="text/javascript" src="Lab%201%20%7C%20COSMOS%20Cluster%207_files/drupal.js"></script>
+<script type="text/javascript" src="Lab%201%20%7C%20COSMOS%20Cluster%207_files/form.js"></script>
+<script type="text/javascript" src="Lab%201%20%7C%20COSMOS%20Cluster%207_files/mathjax.js"></script>
+<script type="text/javascript" src="Lab%201%20%7C%20COSMOS%20Cluster%207_files/MathJax.js"></script>
+<script type="text/javascript" src="Lab%201%20%7C%20COSMOS%20Cluster%207_files/soe_dirty_form.js"></script>
+<script type="text/javascript" src="Lab%201%20%7C%20COSMOS%20Cluster%207_files/webform.js"></script>
+<script type="text/javascript" src="Lab%201%20%7C%20COSMOS%20Cluster%207_files/menu.js"></script>
+<script type="text/javascript" src="Lab%201%20%7C%20COSMOS%20Cluster%207_files/base64.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"bsoe","theme_token":"IddGesOBqy1akA_l5YokIfanQdA9THQd1_6iRZVCfhs","js":{"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/form.js":1,"sites\/all\/modules\/mathjax\/mathjax.js":1,"https:\/\/cdn.mathjax.org\/mathjax\/latest\/MathJax.js?config=TeX-AMS-MML_HTMLorMML":1,"sites\/all\/modules\/soe_dirty_form\/soe_dirty_form.js":1,"sites\/all\/modules\/webform\/js\/webform.js":1,"sites\/all\/themes\/bsoe\/menu.js":1,"sites\/all\/themes\/bsoe\/base64.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/poll\/poll.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/webform\/css\/webform.css":1,"sites\/all\/themes\/bsoe\/style.css":1,"sites\/all\/themes\/bsoe\/menu.css":1}}});
+//--><!]]>
+</script>
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style></head>
+<body class="html not-front not-logged-in one-sidebar sidebar-first page-node page-node- page-node-42 node-type-webform"><div style="display: none;" id="MathJax_Message"></div>
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <table id="bsoe-header-table" class="plain bsoe-theme-fixed">
+<tbody class="plain">
+<tr class="plain">
+<td id="bsoe-logo"><a href="http://www.ucsc.edu/"><img src="Lab%201%20%7C%20COSMOS%20Cluster%207_files/ucsc-logo.gif" alt="UCSC Logo"></a></td>
+<td class="bsoe-padding"></td>
+<td id="bsoe-title"><a href="https://cosmos-cluster-7.courses.soe.ucsc.edu/">COSMOS Cluster 7</a></td>
+<td class="bsoe-padding"></td>
+<td id="bsoe-logo"><a href="http://www.soe.ucsc.edu/"><img src="Lab%201%20%7C%20COSMOS%20Cluster%207_files/bsoe-logo.gif" alt="BSOE Logo"></a></td>
+</tr>
+<tr>
+<td class="bsoe-padding" colspan="5"></td>
+</tr>
+</tbody>
+
+</table>
+<table id="bsoe-content-table" class="plain bsoe-theme-fixed">
+<tbody class="plain">
+<tr>
+<td id="bsoe-left" valign="top">
+<div id="region-main-menu">
+<img src="Lab%201%20%7C%20COSMOS%20Cluster%207_files/menu-top.gif" alt="" height="16" width="200">
+<div style="visibility: visible;" id="dynamic_menu">
+<div class="menu-block-wrapper menu-block-1 menu-name-main-menu parent-mlid-0 menu-level-1">
+  <ul style="position: relative;" class="menu"><li id="menuItemLI_0_0" class="first leaf menu-mlid-315"><a id="menuItemA_0_0" href="http://www.astro.ucsc.edu/" title="astronomy">Astronomy at UCSC</a></li>
+<li id="menuItemLI_1_0" class="leaf menu-mlid-316"><a id="menuItemA_1_0" href="http://www.soe.ucsc.edu/" title="SOE">Engineering at UCSC</a></li>
+<li id="menuItemLI_2_0" class="expanded active-trail menu-mlid-177"><a id="menuItemA_2_0" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/home" class="active-trail">COSMOS Cluster 7</a></li>
+<li id="menuItemLI_3_0" class="last leaf menu-mlid-220"><a id="menuItemA_3_0" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/search" title="">Search</a></li>
+</ul></div>
+</div>
+<img src="Lab%201%20%7C%20COSMOS%20Cluster%207_files/menu-bottom.gif" alt="" height="18" width="200">
+</div>
+  <div class="region region-sidebar-first">
+    <div id="block-search-form" class="block block-search">
+
+    
+  <div class="content">
+    <form action="/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-1" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+      <h2 class="element-invisible">Search form</h2>
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." id="edit-search-block-form--2" name="search_block_form" size="15" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-actions form-wrapper" id="edit-actions--2"><input id="edit-submit--2" name="op" value="Search" class="form-submit" type="submit"></div><input name="form_build_id" value="form-HC3qb8QK9pUmC7mc0aUL2qH7cW255AkTBQVHqbsK-kw" type="hidden">
+<input name="form_id" value="search_block_form" type="hidden">
+</div>
+</div></form>  </div>
+</div>
+  </div>
+</td>
+<td class="bsoe-padding"></td>
+<td id="bsoe-content" colspan="3" valign="top">
+<h1>Lab 1</h1>
+<div id="bsoe-breadcrumb">
+<h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="https://cosmos-cluster-7.courses.soe.ucsc.edu/">Home</a> » <a href="https://cosmos-cluster-7.courses.soe.ucsc.edu/home">COSMOS Cluster 7</a> » <a href="https://cosmos-cluster-7.courses.soe.ucsc.edu/home" title="The afternoon part of this COSMOS Cluster">COSMOS Networking and the Internet</a> » <a href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-networks-internet/labs">Labs</a></div>
+</div>
+  <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-42" class="node node-webform clearfix">
+
+  
+      
+  
+  <div class="content">
+    <form class="webform-client-form webform-client-form-42" enctype="multipart/form-data" action="/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-1" method="post" id="webform-client-form-42" accept-charset="UTF-8"><div><fieldset class="webform-component-fieldset webform-component--binary-and-decimal form-wrapper"><legend><span class="fieldset-legend">Binary and Decimal</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-markup webform-component--binary-and-decimal--p3-1">
+ <p><span>1. Translate the following decimal numbers to 8-bit binary numbers:</span></p>
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--binary-and-decimal--240">
+  <label for="edit-submitted-binary-and-decimal-240">240 </label>
+ <input id="edit-submitted-binary-and-decimal-240" name="submitted[binary_and_decimal][240]" size="10" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--binary-and-decimal--178">
+  <label for="edit-submitted-binary-and-decimal-178">178 </label>
+ <input id="edit-submitted-binary-and-decimal-178" name="submitted[binary_and_decimal][178]" size="10" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--binary-and-decimal--77">
+  <label for="edit-submitted-binary-and-decimal-77">77 </label>
+ <input id="edit-submitted-binary-and-decimal-77" name="submitted[binary_and_decimal][77]" size="10" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--binary-and-decimal--31">
+  <label for="edit-submitted-binary-and-decimal-31">31 </label>
+ <input id="edit-submitted-binary-and-decimal-31" name="submitted[binary_and_decimal][31]" size="10" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--binary-and-decimal--32">
+  <label for="edit-submitted-binary-and-decimal-32">32 </label>
+ <input id="edit-submitted-binary-and-decimal-32" name="submitted[binary_and_decimal][32]" size="10" maxlength="128" class="form-text" type="text">
+</div>
+</div></fieldset>
+<fieldset class="webform-component-fieldset webform-component--binary-to-decimal form-wrapper"><legend><span class="fieldset-legend">Binary to decimal</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-markup webform-component--binary-to-decimal--p3-2">
+ <p>2. Translating the following binary numbers to decimal numbers:&nbsp;</p>
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--binary-to-decimal--00000100">
+  <label for="edit-submitted-binary-to-decimal-00000100">00000100 </label>
+ <input id="edit-submitted-binary-to-decimal-00000100" name="submitted[binary_to_decimal][00000100]" size="10" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--binary-to-decimal--11111011">
+  <label for="edit-submitted-binary-to-decimal-11111011">11111011 </label>
+ <input id="edit-submitted-binary-to-decimal-11111011" name="submitted[binary_to_decimal][11111011]" size="10" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--binary-to-decimal--10111111">
+  <label for="edit-submitted-binary-to-decimal-10111111">10111111 </label>
+ <input id="edit-submitted-binary-to-decimal-10111111" name="submitted[binary_to_decimal][10111111]" size="10" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--binary-to-decimal--01000000">
+  <label for="edit-submitted-binary-to-decimal-01000000">01000000 </label>
+ <input id="edit-submitted-binary-to-decimal-01000000" name="submitted[binary_to_decimal][01000000]" size="10" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--binary-to-decimal--11000000">
+  <label for="edit-submitted-binary-to-decimal-11000000">11000000 </label>
+ <input id="edit-submitted-binary-to-decimal-11000000" name="submitted[binary_to_decimal][11000000]" size="10" maxlength="128" class="form-text" type="text">
+</div>
+</div></fieldset>
+<fieldset class="webform-component-fieldset webform-component--hex-decimal-to-binary form-wrapper"><legend><span class="fieldset-legend">Hex-decimal to binary</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-markup webform-component--hex-decimal-to-binary--p3-3">
+ <p>3. Translating the following <span id="E400">2-digit Hexad</span><span id="E401">ecimal numbers to 8-bit binary numbers:</span></p>
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--hex-decimal-to-binary--0e">
+  <label for="edit-submitted-hex-decimal-to-binary-0e">0E </label>
+ <input id="edit-submitted-hex-decimal-to-binary-0e" name="submitted[hex_decimal_to_binary][0e]" size="10" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--hex-decimal-to-binary--36">
+  <label for="edit-submitted-hex-decimal-to-binary-36">36 </label>
+ <input id="edit-submitted-hex-decimal-to-binary-36" name="submitted[hex_decimal_to_binary][36]" size="10" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--hex-decimal-to-binary--10">
+  <label for="edit-submitted-hex-decimal-to-binary-10">10 </label>
+ <input id="edit-submitted-hex-decimal-to-binary-10" name="submitted[hex_decimal_to_binary][10]" size="10" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--hex-decimal-to-binary--e5">
+  <label for="edit-submitted-hex-decimal-to-binary-e5">E5 </label>
+ <input id="edit-submitted-hex-decimal-to-binary-e5" name="submitted[hex_decimal_to_binary][e5]" size="10" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--hex-decimal-to-binary--5d">
+  <label for="edit-submitted-hex-decimal-to-binary-5d">5D </label>
+ <input id="edit-submitted-hex-decimal-to-binary-5d" name="submitted[hex_decimal_to_binary][5d]" size="10" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--hex-decimal-to-binary--64">
+  <label for="edit-submitted-hex-decimal-to-binary-64">64 </label>
+ <input id="edit-submitted-hex-decimal-to-binary-64" name="submitted[hex_decimal_to_binary][64]" size="10" maxlength="128" class="form-text" type="text">
+</div>
+</div></fieldset>
+<fieldset class="webform-component-fieldset webform-component--binary-to-hex-decimal form-wrapper"><legend><span class="fieldset-legend">Binary to hex-decimal</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-markup webform-component--binary-to-hex-decimal--p3-4">
+ <p>4. Translating the following&nbsp;<span><span>8-bit binary numbers to 2-digit hexadecimal numbers:</span></span></p>
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--binary-to-hex-decimal--01010101">
+  <label for="edit-submitted-binary-to-hex-decimal-01010101">01010101 </label>
+ <input id="edit-submitted-binary-to-hex-decimal-01010101" name="submitted[binary_to_hex_decimal][01010101]" size="10" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--binary-to-hex-decimal--10101010">
+  <label for="edit-submitted-binary-to-hex-decimal-10101010">10101010 </label>
+ <input id="edit-submitted-binary-to-hex-decimal-10101010" name="submitted[binary_to_hex_decimal][10101010]" size="10" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--binary-to-hex-decimal--11110000">
+  <label for="edit-submitted-binary-to-hex-decimal-11110000">11110000 </label>
+ <input id="edit-submitted-binary-to-hex-decimal-11110000" name="submitted[binary_to_hex_decimal][11110000]" size="10" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--binary-to-hex-decimal--11111010">
+  <label for="edit-submitted-binary-to-hex-decimal-11111010">11111010 </label>
+ <input id="edit-submitted-binary-to-hex-decimal-11111010" name="submitted[binary_to_hex_decimal][11111010]" size="10" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--binary-to-hex-decimal--11001010">
+  <label for="edit-submitted-binary-to-hex-decimal-11001010">11001010 </label>
+ <input id="edit-submitted-binary-to-hex-decimal-11001010" name="submitted[binary_to_hex_decimal][11001010]" size="10" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--binary-to-hex-decimal--11011110">
+  <label for="edit-submitted-binary-to-hex-decimal-11011110">11011110 </label>
+ <input id="edit-submitted-binary-to-hex-decimal-11011110" name="submitted[binary_to_hex_decimal][11011110]" size="10" maxlength="128" class="form-text" type="text">
+</div>
+</div></fieldset>
+<fieldset class="webform-component-fieldset webform-component--bitwise-and form-wrapper"><legend><span class="fieldset-legend">Bitwise AND</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-markup webform-component--bitwise-and--p3-5">
+ <p><span id="E526">5. Find the bitwise AND of the&nbsp;</span><span id="E527">two binary numbers:</span></p>
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--bitwise-and--0010-and-1111">
+  <label for="edit-submitted-bitwise-and-0010-and-1111">0010 AND 1111 </label>
+ <input id="edit-submitted-bitwise-and-0010-and-1111" name="submitted[bitwise_and][0010_and_1111]" size="10" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--bitwise-and--1101-and-0000">
+  <label for="edit-submitted-bitwise-and-1101-and-0000">1101 AND 0000 </label>
+ <input id="edit-submitted-bitwise-and-1101-and-0000" name="submitted[bitwise_and][1101_and_0000]" size="10" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--bitwise-and--1100-and-1110">
+  <label for="edit-submitted-bitwise-and-1100-and-1110">1100 AND 1110 </label>
+ <input id="edit-submitted-bitwise-and-1100-and-1110" name="submitted[bitwise_and][1100_and_1110]" size="10" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--bitwise-and--1111-and-1100">
+  <label for="edit-submitted-bitwise-and-1111-and-1100">1111 AND 1100 </label>
+ <input id="edit-submitted-bitwise-and-1111-and-1100" name="submitted[bitwise_and][1111_and_1100]" size="10" maxlength="128" class="form-text" type="text">
+</div>
+</div></fieldset>
+<fieldset class="webform-component-fieldset webform-component--check-your-solution form-wrapper"><legend><span class="fieldset-legend">Check your solution</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-markup webform-component--check-your-solution--check-solution">
+ <p>You can check your solutions with&nbsp;<strong><a href="http://kerryveenstra.com/bin-dec-hex.html">Kerry Veenstra's dynamic page on Binary and Hex</a></strong></p>
+</div>
+</div></fieldset>
+<input name="details[sid]" type="hidden">
+<input name="details[page_num]" value="1" type="hidden">
+<input name="details[page_count]" value="1" type="hidden">
+<input name="details[finished]" value="0" type="hidden">
+<input name="form_build_id" value="form-JTQAwwtKEiTW9DBej0I8Ui8Z2Z3Vh4XY10vBPeOGSco" type="hidden">
+<input name="form_id" value="webform_client_form_42" type="hidden">
+<div class="form-actions"><input class="webform-submit button-primary form-submit" name="op" value="Submit" type="submit"></div></div></form>  </div>
+
+  
+  
+</div>
+  </div>
+</div>
+  </div>
+</td>
+</tr>
+<tr>
+<td id="bsoe-footer" colspan="5">
+© 2014 UC Santa Cruz • All Rights Reserved<br>
+1156 High St, Santa Cruz, CA 95064 • 831-459-2158 •
+<script type="text/javascript">
+document.write(Base64.decode('PGEgaHJlZj0ibWFpbHRvOmxhcnJhYmVlQHVjc2MuZWR1Ij5sYXJyYWJlZUB1Y3NjLmVkdTwvYT4='));
+</script><a href="mailto:larrabee@ucsc.edu">larrabee@ucsc.edu</a>
+<br>
+<div id="links">
+<a href="http://www.ucsc.edu/">UCSC Home</a> •
+<a href="http://www.soe.ucsc.edu/">BSOE Home</a> •
+<a href="https://mail.google.com/a/soe.ucsc.edu/">E-Mail</a> •
+<a href="http://support.soe.ucsc.edu/">Support</a> •
+<a href="http://intranet.soe.ucsc.edu/employment">Employment</a> •
+<a href="https://cosmos-cluster-7.courses.soe.ucsc.edu/user/login?destination=node/42" rel="nofollow">Log In</a></div></td>
+</tr>
+</tbody>
+</table>
+<script type="text/javascript">initMenu();</script><div style="left: 628px; top: 155px; visibility: hidden; display: none;" id="menuItemDIV_0_1" class="dynamic_submenu"><ul style="position: relative;" id="menuItemUL_0_1" class="menu"><li id="menuItemLI_0_1" class="first expanded active-trail menu-mlid-321"><a id="menuItemA_0_1" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/home" title="The afternoon part of this COSMOS Cluster" class="active-trail">COSMOS Networking and the Internet</a></li>
+<li id="menuItemLI_1_1" class="last expanded menu-mlid-363"><a id="menuItemA_1_1" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-astronomy">COSMOS Astronomy</a></li>
+</ul></div><div style="left: 830px; top: 155px; visibility: hidden; display: none;" id="menuItemDIV_0_2" class="dynamic_submenu"><ul style="position: relative;" id="menuItemUL_0_2" class="menu"><li id="menuItemLI_0_2" class="first leaf menu-mlid-365"><a id="menuItemA_0_2" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/home" title="Redundant for flyout menu navigation">Main COSMOS Networking Page</a></li>
+<li id="menuItemLI_1_2" class="leaf menu-mlid-314"><a id="menuItemA_1_2" href="http://up.soe.ucsc.edu/class/Cosmos14/" title="Link to this class on Ubiquitous Presenter">UP</a></li>
+<li id="menuItemLI_2_2" class="leaf menu-mlid-318"><a id="menuItemA_2_2" href="https://www.youtube.com/watch?v=ry1hpm1GXVI" title="Online networking text">The TCP/IP Guide</a></li>
+<li id="menuItemLI_3_2" class="leaf menu-mlid-320"><a id="menuItemA_3_2" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-networks-internet/specific-readings-topic">Network readings by topic</a></li>
+<li id="menuItemLI_4_2" class="leaf menu-mlid-319"><a id="menuItemA_4_2" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-networks-internet/resources-learning-more" title="">Network resources for learning more</a></li>
+<li id="menuItemLI_5_2" class="last expanded active-trail menu-mlid-367"><a id="menuItemA_5_2" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-networks-internet/labs" class="active-trail">Labs</a></li>
+</ul></div><div style="left: 1032px; top: 290px; visibility: hidden; display: none;" id="menuItemDIV_0_3" class="dynamic_submenu"><ul style="position: relative;" id="menuItemUL_0_3" class="menu"><li id="menuItemLI_0_3" class="first leaf active-trail active menu-mlid-366"><a id="menuItemA_0_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-1" class="active-trail active">Lab 1</a></li>
+<li id="menuItemLI_1_3" class="leaf menu-mlid-368"><a id="menuItemA_1_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/Quantization">Lab 2</a></li>
+<li id="menuItemLI_2_3" class="leaf menu-mlid-370"><a id="menuItemA_2_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-3">Lab 3</a></li>
+<li id="menuItemLI_3_3" class="leaf menu-mlid-377"><a id="menuItemA_3_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-4">Lab 4</a></li>
+<li id="menuItemLI_4_3" class="leaf menu-mlid-380"><a id="menuItemA_4_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-5">Lab 5</a></li>
+<li id="menuItemLI_5_3" class="leaf menu-mlid-382"><a id="menuItemA_5_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-6">Lab 6</a></li>
+<li id="menuItemLI_6_3" class="leaf menu-mlid-378"><a id="menuItemA_6_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-7">Lab 7</a></li>
+<li id="menuItemLI_7_3" class="leaf menu-mlid-379"><a id="menuItemA_7_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-8">Lab 8</a></li>
+<li id="menuItemLI_8_3" class="leaf menu-mlid-381"><a id="menuItemA_8_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-9">Lab 9</a></li>
+<li id="menuItemLI_9_3" class="leaf menu-mlid-383"><a id="menuItemA_9_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-10">Lab 10</a></li>
+<li id="menuItemLI_10_3" class="leaf menu-mlid-395"><a id="menuItemA_10_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-11">Lab 11</a></li>
+<li id="menuItemLI_11_3" class="leaf menu-mlid-396"><a id="menuItemA_11_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/list-public-keys-and-emails">List of public keys and emails</a></li>
+<li id="menuItemLI_12_3" class="last leaf menu-mlid-393"><a id="menuItemA_12_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/files-lab">Files for lab</a></li>
+</ul></div><div style="left: 830px; top: 182px; visibility: hidden; display: none;" id="menuItemDIV_6_2" class="dynamic_submenu"><ul style="position: relative;" id="menuItemUL_6_2" class="menu"><li id="menuItemLI_6_2" class="first last expanded menu-mlid-371"><a id="menuItemA_6_2" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-astronomy/student-astronomy-projects">Student Astronomy Projects</a></li>
+</ul></div><div style="left: 1032px; top: 182px; visibility: hidden; display: none;" id="menuItemDIV_13_3" class="dynamic_submenu"><ul style="position: relative;" id="menuItemUL_13_3" class="menu"><li id="menuItemLI_13_3" class="first leaf menu-mlid-372"><a id="menuItemA_13_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-astronomy/student-astronomy-projects/eclipsing-binaries">Eclipsing Binaries</a></li>
+<li id="menuItemLI_14_3" class="leaf menu-mlid-375"><a id="menuItemA_14_3" href="http://tres-3b.weebly.com/" title="">Exoplanets</a></li>
+<li id="menuItemLI_15_3" class="leaf menu-mlid-376"><a id="menuItemA_15_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-astronomy/student-astronomy-projects/globular-clusters">Globular Clusters</a></li>
+<li id="menuItemLI_16_3" class="leaf menu-mlid-374"><a id="menuItemA_16_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-astronomy/student-astronomy-projects/metallicity">Metallicity</a></li>
+<li id="menuItemLI_17_3" class="last leaf menu-mlid-373"><a id="menuItemA_17_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-astronomy/student-astronomy-projects/rotation-curves">Rotation Curves</a></li>
+</ul></div>
+  
+
+</body></html>
