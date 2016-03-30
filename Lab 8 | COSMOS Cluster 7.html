@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html class="js" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr"><head profile="http://www.w3.org/1999/xhtml/vocab">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="shortlink" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/node/56">
+<link rel="canonical" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-8">
+<script type="text/x-mathjax-config;executed=true">MathJax.Hub.Config({
+  extensions: ['tex2jax.js'],
+  jax: ['input/TeX','output/HTML-CSS'],
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  showProcessingMessages: false,
+  messageStyle: 'none'
+});</script><meta name="Generator" content="Drupal 7 (http://drupal.org)">
+  <title>Lab 8 | COSMOS Cluster 7</title>
+  <style type="text/css" media="all">@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/system/system.base.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/system/system.menus.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/system/system.messages.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/system/system.theme.css?nbsqcz");</style>
+<style type="text/css" media="all">@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/comment/comment.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/field/theme/field.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/node/node.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/poll/poll.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/search/search.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/user/user.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/forum/forum.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/sites/all/modules/views/css/views.css?nbsqcz");</style>
+<style type="text/css" media="all">@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/sites/all/modules/ctools/css/ctools.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/sites/all/modules/webform/css/webform.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/file/file.css?nbsqcz");</style>
+<style type="text/css" media="all">@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/sites/all/themes/bsoe/style.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/sites/all/themes/bsoe/menu.css?nbsqcz");</style>
+  <script type="text/javascript" src="Lab%208%20%7C%20COSMOS%20Cluster%207_files/jquery_002.js"></script>
+<script type="text/javascript" src="Lab%208%20%7C%20COSMOS%20Cluster%207_files/jquery.js"></script>
+<script type="text/javascript" src="Lab%208%20%7C%20COSMOS%20Cluster%207_files/drupal.js"></script>
+<script type="text/javascript" src="Lab%208%20%7C%20COSMOS%20Cluster%207_files/jquery_003.js"></script>
+<script type="text/javascript" src="Lab%208%20%7C%20COSMOS%20Cluster%207_files/jquery_004.js"></script>
+<script type="text/javascript" src="Lab%208%20%7C%20COSMOS%20Cluster%207_files/form.js"></script>
+<script type="text/javascript" src="Lab%208%20%7C%20COSMOS%20Cluster%207_files/ajax.js"></script>
+<script type="text/javascript" src="Lab%208%20%7C%20COSMOS%20Cluster%207_files/mathjax.js"></script>
+<script type="text/javascript" src="Lab%208%20%7C%20COSMOS%20Cluster%207_files/MathJax.js"></script>
+<script type="text/javascript" src="Lab%208%20%7C%20COSMOS%20Cluster%207_files/soe_dirty_form.js"></script>
+<script type="text/javascript" src="Lab%208%20%7C%20COSMOS%20Cluster%207_files/tableheader.js"></script>
+<script type="text/javascript" src="Lab%208%20%7C%20COSMOS%20Cluster%207_files/progress.js"></script>
+<script type="text/javascript" src="Lab%208%20%7C%20COSMOS%20Cluster%207_files/textarea.js"></script>
+<script type="text/javascript" src="Lab%208%20%7C%20COSMOS%20Cluster%207_files/webform.js"></script>
+<script type="text/javascript" src="Lab%208%20%7C%20COSMOS%20Cluster%207_files/file.js"></script>
+<script type="text/javascript" src="Lab%208%20%7C%20COSMOS%20Cluster%207_files/menu.js"></script>
+<script type="text/javascript" src="Lab%208%20%7C%20COSMOS%20Cluster%207_files/base64.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"bsoe","theme_token":"AL3frxZ-QN6Flcr6hs9k44DVtfulxC4Q_AgJ5CNKfGo","js":{"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/jquery.cookie.js":1,"misc\/jquery.form.js":1,"misc\/form.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/mathjax\/mathjax.js":1,"https:\/\/cdn.mathjax.org\/mathjax\/latest\/MathJax.js?config=TeX-AMS-MML_HTMLorMML":1,"sites\/all\/modules\/soe_dirty_form\/soe_dirty_form.js":1,"misc\/tableheader.js":1,"misc\/progress.js":1,"misc\/textarea.js":1,"sites\/all\/modules\/webform\/js\/webform.js":1,"modules\/file\/file.js":1,"sites\/all\/themes\/bsoe\/menu.js":1,"sites\/all\/themes\/bsoe\/base64.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/poll\/poll.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/webform\/css\/webform.css":1,"modules\/file\/file.css":1,"sites\/all\/themes\/bsoe\/style.css":1,"sites\/all\/themes\/bsoe\/menu.css":1}},"file":{"elements":{"#edit-submitted-using-packet-tracer-please-upload-your-sc-ping-upload":"gif,jpg,png,bmp,eps,txt,pdf","#edit-submitted-using-packet-tracer-please-upload-your-sc-upload":"gif,jpg,png,bmp,eps,txt,pdf","#edit-submitted-troubleshooting-your-local-subnet-please-upload-your-drawing-here-upload":"gif,jpg,png,bmp,pdf","#edit-submitted-troubleshooting-your-local-subnet-please-upload-the-picture-of-ip-packets-here-upload":"gif,jpg,png,bmp,pdf"}},"ajax":{"edit-submitted-using-packet-tracer-please-upload-your-sc-ping-upload-button":{"wrapper":"edit-submitted-using-packet-tracer-please-upload-your-sc-ping-ajax-wrapper","effect":"fade","progress":{"type":"throbber","message":null},"event":"mousedown","keypress":true,"prevent":"click","url":"\/file\/ajax\/submitted\/using_packet_tracer\/please_upload_your_sc_ping\/form--ELMqY0f0NaOxKT9av9PT-xjgDZKJpDUR6wHVx4KLFQ","submit":{"_triggering_element_name":"submitted_using_packet_tracer_please_upload_your_sc_ping_upload_button","_triggering_element_value":"Upload"}},"edit-submitted-using-packet-tracer-please-upload-your-sc-upload-button":{"wrapper":"edit-submitted-using-packet-tracer-please-upload-your-sc-ajax-wrapper","effect":"fade","progress":{"type":"throbber","message":null},"event":"mousedown","keypress":true,"prevent":"click","url":"\/file\/ajax\/submitted\/using_packet_tracer\/please_upload_your_sc\/form--ELMqY0f0NaOxKT9av9PT-xjgDZKJpDUR6wHVx4KLFQ","submit":{"_triggering_element_name":"submitted_using_packet_tracer_please_upload_your_sc_upload_button","_triggering_element_value":"Upload"}},"edit-submitted-troubleshooting-your-local-subnet-please-upload-your-drawing-here-upload-button":{"wrapper":"edit-submitted-troubleshooting-your-local-subnet-please-upload-your-drawing-here-ajax-wrapper","effect":"fade","progress":{"type":"throbber","message":null},"event":"mousedown","keypress":true,"prevent":"click","url":"\/file\/ajax\/submitted\/troubleshooting_your_local_subnet\/please_upload_your_drawing_here\/form--ELMqY0f0NaOxKT9av9PT-xjgDZKJpDUR6wHVx4KLFQ","submit":{"_triggering_element_name":"submitted_troubleshooting_your_local_subnet_please_upload_your_drawing_here_upload_button","_triggering_element_value":"Upload"}},"edit-submitted-troubleshooting-your-local-subnet-please-upload-the-picture-of-ip-packets-here-upload-button":{"wrapper":"edit-submitted-troubleshooting-your-local-subnet-please-upload-the-picture-of-ip-packets-here-ajax-wrapper","effect":"fade","progress":{"type":"throbber","message":null},"event":"mousedown","keypress":true,"prevent":"click","url":"\/file\/ajax\/submitted\/troubleshooting_your_local_subnet\/please_upload_the_picture_of_ip_packets_here\/form--ELMqY0f0NaOxKT9av9PT-xjgDZKJpDUR6wHVx4KLFQ","submit":{"_triggering_element_name":"submitted_troubleshooting_your_local_subnet_please_upload_the_picture_of_ip_packets_here_upload_button","_triggering_element_value":"Upload"}}}});
+//--><!]]>
+</script>
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style></head>
+<body class="html not-front not-logged-in one-sidebar sidebar-first page-node page-node- page-node-56 node-type-webform"><div style="display: none;" id="MathJax_Message"></div>
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <table id="bsoe-header-table" class="plain bsoe-theme-fixed">
+<tbody class="plain">
+<tr class="plain">
+<td id="bsoe-logo"><a href="http://www.ucsc.edu/"><img src="Lab%208%20%7C%20COSMOS%20Cluster%207_files/ucsc-logo.gif" alt="UCSC Logo"></a></td>
+<td class="bsoe-padding"></td>
+<td id="bsoe-title"><a href="https://cosmos-cluster-7.courses.soe.ucsc.edu/">COSMOS Cluster 7</a></td>
+<td class="bsoe-padding"></td>
+<td id="bsoe-logo"><a href="http://www.soe.ucsc.edu/"><img src="Lab%208%20%7C%20COSMOS%20Cluster%207_files/bsoe-logo.gif" alt="BSOE Logo"></a></td>
+</tr>
+<tr>
+<td class="bsoe-padding" colspan="5"></td>
+</tr>
+</tbody>
+
+</table>
+<table id="bsoe-content-table" class="plain bsoe-theme-fixed">
+<tbody class="plain">
+<tr>
+<td id="bsoe-left" valign="top">
+<div id="region-main-menu">
+<img src="Lab%208%20%7C%20COSMOS%20Cluster%207_files/menu-top.gif" alt="" height="16" width="200">
+<div style="visibility: visible;" id="dynamic_menu">
+<div class="menu-block-wrapper menu-block-1 menu-name-main-menu parent-mlid-0 menu-level-1">
+  <ul style="position: relative;" class="menu"><li id="menuItemLI_0_0" class="first leaf menu-mlid-315"><a id="menuItemA_0_0" href="http://www.astro.ucsc.edu/" title="astronomy">Astronomy at UCSC</a></li>
+<li id="menuItemLI_1_0" class="leaf menu-mlid-316"><a id="menuItemA_1_0" href="http://www.soe.ucsc.edu/" title="SOE">Engineering at UCSC</a></li>
+<li id="menuItemLI_2_0" class="expanded active-trail menu-mlid-177"><a id="menuItemA_2_0" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/home" class="active-trail">COSMOS Cluster 7</a></li>
+<li id="menuItemLI_3_0" class="last leaf menu-mlid-220"><a id="menuItemA_3_0" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/search" title="">Search</a></li>
+</ul></div>
+</div>
+<img src="Lab%208%20%7C%20COSMOS%20Cluster%207_files/menu-bottom.gif" alt="" height="18" width="200">
+</div>
+  <div class="region region-sidebar-first">
+    <div id="block-search-form" class="block block-search">
+
+    
+  <div class="content">
+    <form action="/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-8" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+      <h2 class="element-invisible">Search form</h2>
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." id="edit-search-block-form--2" name="search_block_form" size="15" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-actions form-wrapper" id="edit-actions--2"><input id="edit-submit--2" name="op" value="Search" class="form-submit" type="submit"></div><input name="form_build_id" value="form-r5QQj1wHQzGX8ubcQAakiyAdP9CgOmJ2wwtxcfIkL98" type="hidden">
+<input name="form_id" value="search_block_form" type="hidden">
+</div>
+</div></form>  </div>
+</div>
+  </div>
+</td>
+<td class="bsoe-padding"></td>
+<td id="bsoe-content" colspan="3" valign="top">
+<h1>Lab 8</h1>
+<div id="bsoe-breadcrumb">
+<h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="https://cosmos-cluster-7.courses.soe.ucsc.edu/">Home</a> » <a href="https://cosmos-cluster-7.courses.soe.ucsc.edu/home">COSMOS Cluster 7</a> » <a href="https://cosmos-cluster-7.courses.soe.ucsc.edu/home" title="The afternoon part of this COSMOS Cluster">COSMOS Networking and the Internet</a> » <a href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-networks-internet/labs">Labs</a></div>
+</div>
+  <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-56" class="node node-webform clearfix">
+
+  
+      
+  
+  <div class="content">
+    <div class="field field-name-field-attachments field-type-file field-label-above"><div class="field-label">Attachments:&nbsp;</div><div class="field-items"><div class="field-item even"><table style="position: fixed; top: 0px; left: 635.5px; visibility: hidden;" class="sticky-header"><thead style="display: block;"><tr><th>Attachment</th><th>Size</th> </tr></thead></table><table class="sticky-enabled tableheader-processed sticky-table">
+ <thead><tr><th>Attachment</th><th>Size</th> </tr></thead>
+<tbody>
+ <tr class="odd"><td><span class="file"><img class="file-icon" alt="" title="application/pdf" src="Lab%208%20%7C%20COSMOS%20Cluster%207_files/application-pdf.png"> <a href="https://cosmos-cluster-7.courses.soe.ucsc.edu/system/files/packet-tracer-instructions.pptx.pdf" type="application/pdf; length=6187292">packet-tracer-instructions.pptx.pdf</a></span></td><td>5.9 MB</td> </tr>
+ <tr class="even"><td><span class="file"><img class="file-icon" alt="" title="image/png" src="Lab%208%20%7C%20COSMOS%20Cluster%207_files/image-x-generic.png"> <a href="https://cosmos-cluster-7.courses.soe.ucsc.edu/system/files/IP_packet.png" type="image/png; length=61536">IP_packet.png</a></span></td><td>60.09 KB</td> </tr>
+</tbody>
+</table>
+</div></div></div><form class="webform-client-form webform-client-form-56" enctype="multipart/form-data" action="/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-8" method="post" id="webform-client-form-56" accept-charset="UTF-8"><div><fieldset class="webform-component-fieldset webform-component--using-packet-tracer form-wrapper"><legend><span class="fieldset-legend">Using Packet Tracer</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-markup webform-component--using-packet-tracer--p1">
+ <p><span style="color: #000000;">Exercise 1 uses the </span><span style="color: #000000;"><a href="https://cosmos-cluster-7.courses.soe.ucsc.edu/system/files/packet-tracer-instructions.pptx.pdf">Packet Tracer Instructions</a> PDF</span><span style="color: #000000;">. Read it to use software on a Windows PC in a campus computer lab.</span></p>
+<p><span style="color: #000000;"><span style="color: #000000;">Using the Packet Tracer software mentioned above, follow the steps in the </span><a href="https://cosmos-cluster-7.courses.soe.ucsc.edu/system/files/packet-tracer-instructions.pptx.pdf"><span style="color: #000000;">Packet Tracer Instructions</span></a><span style="color: #000000;"> to create a two-computer network and demonstrate that it works. For this exercise, report the result of the</span><strong><span style="color: #000000;"> ipconfig /all</span></strong><span style="color: #000000;"> command and the result of the </span><span style="color: #000000;"><strong>ping 40.0.0.1 </strong>command. If you know how, you can turn in screenshot </span><span style="color: #000000;">of the two Command Prompt screens.</span></span></p>
+</div>
+<div id="edit-submitted-using-packet-tracer-please-upload-your-sc-ping-ajax-wrapper"><div class="form-item webform-component webform-component-file webform-component--using-packet-tracer--please-upload-your-sc-ping webform-container-inline">
+  <label for="edit-submitted-using-packet-tracer-please-upload-your-sc-ping-upload">Please upload your screenshot for "ping" here:  </label>
+ <div id="edit-submitted-using-packet-tracer-please-upload-your-sc-ping" class="form-managed-file"><input id="edit-submitted-using-packet-tracer-please-upload-your-sc-ping-upload" name="files[submitted_using_packet_tracer_please_upload_your_sc_ping]" size="22" class="form-file" type="file"><input id="edit-submitted-using-packet-tracer-please-upload-your-sc-ping-upload-button" name="submitted_using_packet_tracer_please_upload_your_sc_ping_upload_button" value="Upload" class="form-submit ajax-processed" type="submit"><input name="submitted[using_packet_tracer][please_upload_your_sc_ping][fid]" value="0" type="hidden">
+</div>
+ <div class="description">Files must be less than <strong>10 MB</strong>.<br>Allowed file types: <strong>gif jpg png bmp eps txt pdf</strong>.</div>
+</div>
+</div><div id="edit-submitted-using-packet-tracer-please-upload-your-sc-ajax-wrapper"><div class="form-item webform-component webform-component-file webform-component--using-packet-tracer--please-upload-your-sc webform-container-inline">
+  <label for="edit-submitted-using-packet-tracer-please-upload-your-sc-upload">Please upload your screenshot for "ipconfig" here:  </label>
+ <div id="edit-submitted-using-packet-tracer-please-upload-your-sc" class="form-managed-file"><input id="edit-submitted-using-packet-tracer-please-upload-your-sc-upload" name="files[submitted_using_packet_tracer_please_upload_your_sc]" size="22" class="form-file" type="file"><input id="edit-submitted-using-packet-tracer-please-upload-your-sc-upload-button" name="submitted_using_packet_tracer_please_upload_your_sc_upload_button" value="Upload" class="form-submit ajax-processed" type="submit"><input name="submitted[using_packet_tracer][please_upload_your_sc][fid]" value="0" type="hidden">
+</div>
+ <div class="description">Files must be less than <strong>10 MB</strong>.<br>Allowed file types: <strong>gif jpg png bmp eps txt pdf</strong>.</div>
+</div>
+</div></div></fieldset>
+<fieldset class="webform-component-fieldset webform-component--troubleshooting-your-local-subnet form-wrapper"><legend><span class="fieldset-legend">Troubleshooting Your Local Subnet</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-markup webform-component--troubleshooting-your-local-subnet--p2">
+ <p><strong><span style="color: #000000;"><span style="color: #000000;">The rest of the exercises use the following description.</span></span></strong></p>
+<p><span style="color: #000000;">Your computer is on a local subnet</span><span style="color: #000000;"> along with another computer and a router. Your computer's IP </span><span style="color: #000000;">address
+ is 32.128.0.39 /24, and your computer's MAC address is 
+11:11:11:11:11:11. Your computer's default gateway (router) is 
+32.128.0.7 /24. Your computer doesn't know the MAC addresses of anything
+ else on its local subnet.</span></p>
+</div>
+<div class="form-item webform-component webform-component-markup webform-component--troubleshooting-your-local-subnet--p2-1">
+ <p><strong>(a) George Polya says that to understand a problem, you can 
+consider drawing a picture or using Packet Tracer to illustrate the 
+setup. <br></strong></p>
+</div>
+<div id="edit-submitted-troubleshooting-your-local-subnet-please-upload-your-drawing-here-ajax-wrapper"><div class="form-item webform-component webform-component-file webform-component--troubleshooting-your-local-subnet--please-upload-your-drawing-here webform-container-inline">
+  <label for="edit-submitted-troubleshooting-your-local-subnet-please-upload-your-drawing-here-upload">Please upload your drawing here:  </label>
+ <div id="edit-submitted-troubleshooting-your-local-subnet-please-upload-your-drawing-here" class="form-managed-file"><input id="edit-submitted-troubleshooting-your-local-subnet-please-upload-your-drawing-here-upload" name="files[submitted_troubleshooting_your_local_subnet_please_upload_your_drawing_here]" size="22" class="form-file" type="file"><input id="edit-submitted-troubleshooting-your-local-subnet-please-upload-your-drawing-here-upload-button" name="submitted_troubleshooting_your_local_subnet_please_upload_your_drawing_here_upload_button" value="Upload" class="form-submit ajax-processed" type="submit"><input name="submitted[troubleshooting_your_local_subnet][please_upload_your_drawing_here][fid]" value="0" type="hidden">
+</div>
+ <div class="description">Files must be less than <strong>10 MB</strong>.<br>Allowed file types: <strong>gif jpg png bmp pdf</strong>.</div>
+</div>
+</div><div class="form-item webform-component webform-component-markup webform-component--troubleshooting-your-local-subnet--p2-2">
+ <p><strong>(b) Your computer prepares to send two IP datagrams. The 
+first is destined for 32.128.1.129 /24. Is this datagram's recipient on 
+your computer's subnet? Demonstrate conclusively. The second IPdatagram 
+is destined for 32.128.0.127 /24. Is this datagram's recipient on your 
+computer's subnet? Demonstrate conclusively.</strong></p>
+</div>
+<div class="form-item webform-component webform-component-textarea webform-component--troubleshooting-your-local-subnet--p2-2a">
+  <label class="element-invisible" for="edit-submitted-troubleshooting-your-local-subnet-p2-2a">P2_2a </label>
+ <div class="form-textarea-wrapper resizable textarea-processed resizable-textarea"><textarea id="edit-submitted-troubleshooting-your-local-subnet-p2-2a" name="submitted[troubleshooting_your_local_subnet][p2_2a]" cols="50" rows="4" class="form-textarea"></textarea><div class="grippie"></div></div>
+</div>
+<div class="form-item webform-component webform-component-markup webform-component--troubleshooting-your-local-subnet--p2-3">
+ <p><strong>(c) <span style="color: #000000;">Your computer sends two Layer-2 packets, one to each of the </span><span style="text-decoration: underline; color: #000000;">IP</span><span style="color: #000000;"> addresses of the previous exercise. How would your computer get the MAC addresses that it needs for these Layer-2 packets?</span></strong></p>
+</div>
+<div class="form-item webform-component webform-component-textarea webform-component--troubleshooting-your-local-subnet--p2-3a">
+  <label class="element-invisible" for="edit-submitted-troubleshooting-your-local-subnet-p2-3a">P2_3a </label>
+ <div class="form-textarea-wrapper resizable textarea-processed resizable-textarea"><textarea id="edit-submitted-troubleshooting-your-local-subnet-p2-3a" name="submitted[troubleshooting_your_local_subnet][p2_3a]" cols="50" rows="4" class="form-textarea"></textarea><div class="grippie"></div></div>
+</div>
+<div class="form-item webform-component webform-component-markup webform-component--troubleshooting-your-local-subnet--p2-4">
+ <p><strong>(d) Suppose that the operation of the previous question gave
+ your computer the MAC address 33:33:33:33:33:33 for the first IP 
+datagram; what machine is this the MAC address for? Suppose that the 
+operation above gave you the MAC address 77:77:77:77:77:77 for your 
+second IP datagram; what machine is this the MAC address for?</strong></p>
+</div>
+<div class="form-item webform-component webform-component-textarea webform-component--troubleshooting-your-local-subnet--p2-4a">
+  <label class="element-invisible" for="edit-submitted-troubleshooting-your-local-subnet-p2-4a">P2_4a </label>
+ <div class="form-textarea-wrapper resizable textarea-processed resizable-textarea"><textarea id="edit-submitted-troubleshooting-your-local-subnet-p2-4a" name="submitted[troubleshooting_your_local_subnet][p2_4a]" cols="50" rows="4" class="form-textarea"></textarea><div class="grippie"></div></div>
+</div>
+<div class="form-item webform-component webform-component-markup webform-component--troubleshooting-your-local-subnet--p2-5">
+ <p><strong><span style="color: #000000;">(e) Fill in the address fields
+ below for each of the Layer-2 packets that your computer will send. 
+Also label each address field with the device that it corresponds to 
+("your computer,'' "the other computer,'' "the router'')</span></strong></p>
+<p><span style="color: #000000;"><img style="vertical-align: middle;" src="Lab%208%20%7C%20COSMOS%20Cluster%207_files/IP_packet.png" alt="IP packet" height="334" width="700"></span></p>
+</div>
+<div id="edit-submitted-troubleshooting-your-local-subnet-please-upload-the-picture-of-ip-packets-here-ajax-wrapper"><div class="form-item webform-component webform-component-file webform-component--troubleshooting-your-local-subnet--please-upload-the-picture-of-ip-packets-here webform-container-inline">
+  <label for="edit-submitted-troubleshooting-your-local-subnet-please-upload-the-picture-of-ip-packets-here-upload">Please upload the picture of IP packets here </label>
+ <div id="edit-submitted-troubleshooting-your-local-subnet-please-upload-the-picture-of-ip-packets-here" class="form-managed-file"><input id="edit-submitted-troubleshooting-your-local-subnet-please-upload-the-picture-of-ip-packets-here-upload" name="files[submitted_troubleshooting_your_local_subnet_please_upload_the_picture_of_ip_packets_here]" size="22" class="form-file" type="file"><input id="edit-submitted-troubleshooting-your-local-subnet-please-upload-the-picture-of-ip-packets-here-upload-button" name="submitted_troubleshooting_your_local_subnet_please_upload_the_picture_of_ip_packets_here_upload_button" value="Upload" class="form-submit ajax-processed" type="submit"><input name="submitted[troubleshooting_your_local_subnet][please_upload_the_picture_of_ip_packets_here][fid]" value="0" type="hidden">
+</div>
+ <div class="description">Files must be less than <strong>10 MB</strong>.<br>Allowed file types: <strong>gif jpg png bmp pdf</strong>.</div>
+</div>
+</div></div></fieldset>
+<input name="details[sid]" type="hidden">
+<input name="details[page_num]" value="1" type="hidden">
+<input name="details[page_count]" value="1" type="hidden">
+<input name="details[finished]" value="0" type="hidden">
+<input name="form_build_id" value="form--ELMqY0f0NaOxKT9av9PT-xjgDZKJpDUR6wHVx4KLFQ" type="hidden">
+<input name="form_id" value="webform_client_form_56" type="hidden">
+<div class="form-actions"><input class="webform-submit button-primary form-submit" name="op" value="Submit" type="submit"></div></div></form>  </div>
+
+  
+  
+</div>
+  </div>
+</div>
+  </div>
+</td>
+</tr>
+<tr>
+<td id="bsoe-footer" colspan="5">
+© 2014 UC Santa Cruz • All Rights Reserved<br>
+1156 High St, Santa Cruz, CA 95064 • 831-459-2158 •
+<script type="text/javascript">
+document.write(Base64.decode('PGEgaHJlZj0ibWFpbHRvOmxhcnJhYmVlQHVjc2MuZWR1Ij5sYXJyYWJlZUB1Y3NjLmVkdTwvYT4='));
+</script><a href="mailto:larrabee@ucsc.edu">larrabee@ucsc.edu</a>
+<br>
+<div id="links">
+<a href="http://www.ucsc.edu/">UCSC Home</a> •
+<a href="http://www.soe.ucsc.edu/">BSOE Home</a> •
+<a href="https://mail.google.com/a/soe.ucsc.edu/">E-Mail</a> •
+<a href="http://support.soe.ucsc.edu/">Support</a> •
+<a href="http://intranet.soe.ucsc.edu/employment">Employment</a> •
+<a href="https://cosmos-cluster-7.courses.soe.ucsc.edu/user/login?destination=node/56" rel="nofollow">Log In</a></div></td>
+</tr>
+</tbody>
+</table>
+<script type="text/javascript">initMenu();</script><div style="left: 628px; top: 155px; visibility: hidden; display: none;" id="menuItemDIV_0_1" class="dynamic_submenu"><ul style="position: relative;" id="menuItemUL_0_1" class="menu"><li id="menuItemLI_0_1" class="first expanded active-trail menu-mlid-321"><a id="menuItemA_0_1" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/home" title="The afternoon part of this COSMOS Cluster" class="active-trail">COSMOS Networking and the Internet</a></li>
+<li id="menuItemLI_1_1" class="last expanded menu-mlid-363"><a id="menuItemA_1_1" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-astronomy">COSMOS Astronomy</a></li>
+</ul></div><div style="left: 830px; top: 155px; visibility: hidden; display: none;" id="menuItemDIV_0_2" class="dynamic_submenu"><ul style="position: relative;" id="menuItemUL_0_2" class="menu"><li id="menuItemLI_0_2" class="first leaf menu-mlid-365"><a id="menuItemA_0_2" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/home" title="Redundant for flyout menu navigation">Main COSMOS Networking Page</a></li>
+<li id="menuItemLI_1_2" class="leaf menu-mlid-314"><a id="menuItemA_1_2" href="http://up.soe.ucsc.edu/class/Cosmos14/" title="Link to this class on Ubiquitous Presenter">UP</a></li>
+<li id="menuItemLI_2_2" class="leaf menu-mlid-318"><a id="menuItemA_2_2" href="https://www.youtube.com/watch?v=ry1hpm1GXVI" title="Online networking text">The TCP/IP Guide</a></li>
+<li id="menuItemLI_3_2" class="leaf menu-mlid-320"><a id="menuItemA_3_2" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-networks-internet/specific-readings-topic">Network readings by topic</a></li>
+<li id="menuItemLI_4_2" class="leaf menu-mlid-319"><a id="menuItemA_4_2" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-networks-internet/resources-learning-more" title="">Network resources for learning more</a></li>
+<li id="menuItemLI_5_2" class="last expanded active-trail menu-mlid-367"><a id="menuItemA_5_2" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-networks-internet/labs" class="active-trail">Labs</a></li>
+</ul></div><div style="left: 1032px; top: 290px; visibility: hidden; display: none;" id="menuItemDIV_0_3" class="dynamic_submenu"><ul style="position: relative;" id="menuItemUL_0_3" class="menu"><li id="menuItemLI_0_3" class="first leaf menu-mlid-366"><a id="menuItemA_0_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-1">Lab 1</a></li>
+<li id="menuItemLI_1_3" class="leaf menu-mlid-368"><a id="menuItemA_1_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/Quantization">Lab 2</a></li>
+<li id="menuItemLI_2_3" class="leaf menu-mlid-370"><a id="menuItemA_2_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-3">Lab 3</a></li>
+<li id="menuItemLI_3_3" class="leaf menu-mlid-377"><a id="menuItemA_3_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-4">Lab 4</a></li>
+<li id="menuItemLI_4_3" class="leaf menu-mlid-380"><a id="menuItemA_4_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-5">Lab 5</a></li>
+<li id="menuItemLI_5_3" class="leaf menu-mlid-382"><a id="menuItemA_5_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-6">Lab 6</a></li>
+<li id="menuItemLI_6_3" class="leaf menu-mlid-378"><a id="menuItemA_6_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-7">Lab 7</a></li>
+<li id="menuItemLI_7_3" class="leaf active-trail active menu-mlid-379"><a id="menuItemA_7_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-8" class="active-trail active">Lab 8</a></li>
+<li id="menuItemLI_8_3" class="leaf menu-mlid-381"><a id="menuItemA_8_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-9">Lab 9</a></li>
+<li id="menuItemLI_9_3" class="leaf menu-mlid-383"><a id="menuItemA_9_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-10">Lab 10</a></li>
+<li id="menuItemLI_10_3" class="leaf menu-mlid-395"><a id="menuItemA_10_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-11">Lab 11</a></li>
+<li id="menuItemLI_11_3" class="leaf menu-mlid-396"><a id="menuItemA_11_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/list-public-keys-and-emails">List of public keys and emails</a></li>
+<li id="menuItemLI_12_3" class="last leaf menu-mlid-393"><a id="menuItemA_12_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/files-lab">Files for lab</a></li>
+</ul></div><div style="left: 830px; top: 182px; visibility: hidden; display: none;" id="menuItemDIV_6_2" class="dynamic_submenu"><ul style="position: relative;" id="menuItemUL_6_2" class="menu"><li id="menuItemLI_6_2" class="first last expanded menu-mlid-371"><a id="menuItemA_6_2" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-astronomy/student-astronomy-projects">Student Astronomy Projects</a></li>
+</ul></div><div style="left: 1032px; top: 182px; visibility: hidden; display: none;" id="menuItemDIV_13_3" class="dynamic_submenu"><ul style="position: relative;" id="menuItemUL_13_3" class="menu"><li id="menuItemLI_13_3" class="first leaf menu-mlid-372"><a id="menuItemA_13_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-astronomy/student-astronomy-projects/eclipsing-binaries">Eclipsing Binaries</a></li>
+<li id="menuItemLI_14_3" class="leaf menu-mlid-375"><a id="menuItemA_14_3" href="http://tres-3b.weebly.com/" title="">Exoplanets</a></li>
+<li id="menuItemLI_15_3" class="leaf menu-mlid-376"><a id="menuItemA_15_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-astronomy/student-astronomy-projects/globular-clusters">Globular Clusters</a></li>
+<li id="menuItemLI_16_3" class="leaf menu-mlid-374"><a id="menuItemA_16_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-astronomy/student-astronomy-projects/metallicity">Metallicity</a></li>
+<li id="menuItemLI_17_3" class="last leaf menu-mlid-373"><a id="menuItemA_17_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-astronomy/student-astronomy-projects/rotation-curves">Rotation Curves</a></li>
+</ul></div>
+  
+
+</body></html>

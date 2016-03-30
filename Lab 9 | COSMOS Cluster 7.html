@@ -1,0 +1,579 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html class="js" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr"><head profile="http://www.w3.org/1999/xhtml/vocab">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="shortlink" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/node/58">
+<link rel="canonical" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-9">
+<script type="text/x-mathjax-config;executed=true">MathJax.Hub.Config({
+  extensions: ['tex2jax.js'],
+  jax: ['input/TeX','output/HTML-CSS'],
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  showProcessingMessages: false,
+  messageStyle: 'none'
+});</script><meta name="Generator" content="Drupal 7 (http://drupal.org)">
+  <title>Lab 9 | COSMOS Cluster 7</title>
+  <style type="text/css" media="all">@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/system/system.base.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/system/system.menus.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/system/system.messages.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/system/system.theme.css?nbsqcz");</style>
+<style type="text/css" media="all">@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/comment/comment.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/field/theme/field.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/node/node.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/poll/poll.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/search/search.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/user/user.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/forum/forum.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/sites/all/modules/views/css/views.css?nbsqcz");</style>
+<style type="text/css" media="all">@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/sites/all/modules/ctools/css/ctools.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/modules/file/file.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/sites/all/modules/webform/css/webform.css?nbsqcz");</style>
+<style type="text/css" media="all">@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/sites/all/themes/bsoe/style.css?nbsqcz");
+@import url("https://cosmos-cluster-7.courses.soe.ucsc.edu/sites/all/themes/bsoe/menu.css?nbsqcz");</style>
+  <script type="text/javascript" src="Lab%209%20%7C%20COSMOS%20Cluster%207_files/jquery_002.js"></script>
+<script type="text/javascript" src="Lab%209%20%7C%20COSMOS%20Cluster%207_files/jquery.js"></script>
+<script type="text/javascript" src="Lab%209%20%7C%20COSMOS%20Cluster%207_files/drupal.js"></script>
+<script type="text/javascript" src="Lab%209%20%7C%20COSMOS%20Cluster%207_files/jquery_003.js"></script>
+<script type="text/javascript" src="Lab%209%20%7C%20COSMOS%20Cluster%207_files/jquery_004.js"></script>
+<script type="text/javascript" src="Lab%209%20%7C%20COSMOS%20Cluster%207_files/form.js"></script>
+<script type="text/javascript" src="Lab%209%20%7C%20COSMOS%20Cluster%207_files/ajax.js"></script>
+<script type="text/javascript" src="Lab%209%20%7C%20COSMOS%20Cluster%207_files/mathjax.js"></script>
+<script type="text/javascript" src="Lab%209%20%7C%20COSMOS%20Cluster%207_files/MathJax.js"></script>
+<script type="text/javascript" src="Lab%209%20%7C%20COSMOS%20Cluster%207_files/soe_dirty_form.js"></script>
+<script type="text/javascript" src="Lab%209%20%7C%20COSMOS%20Cluster%207_files/progress.js"></script>
+<script type="text/javascript" src="Lab%209%20%7C%20COSMOS%20Cluster%207_files/file.js"></script>
+<script type="text/javascript" src="Lab%209%20%7C%20COSMOS%20Cluster%207_files/webform.js"></script>
+<script type="text/javascript" src="Lab%209%20%7C%20COSMOS%20Cluster%207_files/menu.js"></script>
+<script type="text/javascript" src="Lab%209%20%7C%20COSMOS%20Cluster%207_files/base64.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"bsoe","theme_token":"3pkxHTc0Zjbex79bJivyLGOklXp7aqrlV74sApwrKvQ","js":{"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/jquery.cookie.js":1,"misc\/jquery.form.js":1,"misc\/form.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/mathjax\/mathjax.js":1,"https:\/\/cdn.mathjax.org\/mathjax\/latest\/MathJax.js?config=TeX-AMS-MML_HTMLorMML":1,"sites\/all\/modules\/soe_dirty_form\/soe_dirty_form.js":1,"misc\/progress.js":1,"modules\/file\/file.js":1,"sites\/all\/modules\/webform\/js\/webform.js":1,"sites\/all\/themes\/bsoe\/menu.js":1,"sites\/all\/themes\/bsoe\/base64.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/poll\/poll.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"modules\/file\/file.css":1,"sites\/all\/modules\/webform\/css\/webform.css":1,"sites\/all\/themes\/bsoe\/style.css":1,"sites\/all\/themes\/bsoe\/menu.css":1}},"file":{"elements":{"#edit-submitted-network-setup-please-upload-your-screenshot-here-upload":"gif,jpg,png,bmp,pdf"}},"ajax":{"edit-submitted-network-setup-please-upload-your-screenshot-here-upload-button":{"wrapper":"edit-submitted-network-setup-please-upload-your-screenshot-here-ajax-wrapper","effect":"fade","progress":{"type":"throbber","message":null},"event":"mousedown","keypress":true,"prevent":"click","url":"\/file\/ajax\/submitted\/network_setup\/please_upload_your_screenshot_here\/form-atVZvdKzC9XqnwkOAmRJQIbp-Hm8EWTcdCNqBA-Eopg","submit":{"_triggering_element_name":"submitted_network_setup_please_upload_your_screenshot_here_upload_button","_triggering_element_value":"Upload"}}}});
+//--><!]]>
+</script>
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style></head>
+<body class="html not-front not-logged-in one-sidebar sidebar-first page-node page-node- page-node-58 node-type-webform"><div style="display: none;" id="MathJax_Message"></div>
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <table id="bsoe-header-table" class="plain bsoe-theme-fixed">
+<tbody class="plain">
+<tr class="plain">
+<td id="bsoe-logo"><a href="http://www.ucsc.edu/"><img src="Lab%209%20%7C%20COSMOS%20Cluster%207_files/ucsc-logo.gif" alt="UCSC Logo"></a></td>
+<td class="bsoe-padding"></td>
+<td id="bsoe-title"><a href="https://cosmos-cluster-7.courses.soe.ucsc.edu/">COSMOS Cluster 7</a></td>
+<td class="bsoe-padding"></td>
+<td id="bsoe-logo"><a href="http://www.soe.ucsc.edu/"><img src="Lab%209%20%7C%20COSMOS%20Cluster%207_files/bsoe-logo.gif" alt="BSOE Logo"></a></td>
+</tr>
+<tr>
+<td class="bsoe-padding" colspan="5"></td>
+</tr>
+</tbody>
+
+</table>
+<table id="bsoe-content-table" class="plain bsoe-theme-fixed">
+<tbody class="plain">
+<tr>
+<td id="bsoe-left" valign="top">
+<div id="region-main-menu">
+<img src="Lab%209%20%7C%20COSMOS%20Cluster%207_files/menu-top.gif" alt="" height="16" width="200">
+<div style="visibility: visible;" id="dynamic_menu">
+<div class="menu-block-wrapper menu-block-1 menu-name-main-menu parent-mlid-0 menu-level-1">
+  <ul style="position: relative;" class="menu"><li id="menuItemLI_0_0" class="first leaf menu-mlid-315"><a id="menuItemA_0_0" href="http://www.astro.ucsc.edu/" title="astronomy">Astronomy at UCSC</a></li>
+<li id="menuItemLI_1_0" class="leaf menu-mlid-316"><a id="menuItemA_1_0" href="http://www.soe.ucsc.edu/" title="SOE">Engineering at UCSC</a></li>
+<li id="menuItemLI_2_0" class="expanded active-trail menu-mlid-177"><a id="menuItemA_2_0" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/home" class="active-trail">COSMOS Cluster 7</a></li>
+<li id="menuItemLI_3_0" class="last leaf menu-mlid-220"><a id="menuItemA_3_0" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/search" title="">Search</a></li>
+</ul></div>
+</div>
+<img src="Lab%209%20%7C%20COSMOS%20Cluster%207_files/menu-bottom.gif" alt="" height="18" width="200">
+</div>
+  <div class="region region-sidebar-first">
+    <div id="block-search-form" class="block block-search">
+
+    
+  <div class="content">
+    <form action="/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-9" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+      <h2 class="element-invisible">Search form</h2>
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." id="edit-search-block-form--2" name="search_block_form" size="15" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-actions form-wrapper" id="edit-actions--2"><input id="edit-submit--2" name="op" value="Search" class="form-submit" type="submit"></div><input name="form_build_id" value="form-VVR45ukvPf5_qaggl0gkmxP6J6YeDHuTeuqUH3Z0TnM" type="hidden">
+<input name="form_id" value="search_block_form" type="hidden">
+</div>
+</div></form>  </div>
+</div>
+  </div>
+</td>
+<td class="bsoe-padding"></td>
+<td id="bsoe-content" colspan="3" valign="top">
+<h1>Lab 9</h1>
+<div id="bsoe-breadcrumb">
+<h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="https://cosmos-cluster-7.courses.soe.ucsc.edu/">Home</a> » <a href="https://cosmos-cluster-7.courses.soe.ucsc.edu/home">COSMOS Cluster 7</a> » <a href="https://cosmos-cluster-7.courses.soe.ucsc.edu/home" title="The afternoon part of this COSMOS Cluster">COSMOS Networking and the Internet</a> » <a href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-networks-internet/labs">Labs</a></div>
+</div>
+  <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-58" class="node node-webform clearfix">
+
+  
+      
+  
+  <div class="content">
+    <form class="webform-client-form webform-client-form-58" enctype="multipart/form-data" action="/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-9" method="post" id="webform-client-form-58" accept-charset="UTF-8"><div><fieldset class="webform-component-fieldset webform-component--system-requirement form-wrapper"><legend><span class="fieldset-legend">System requirement</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-markup webform-component--system-requirement--p1">
+ <p>For this lab (and just like Lab 8), you are asked to use a computer 
+with Windows (your own computer, or one in the ITS Computer Labs). For 
+the reason that not everyone in the class has a computer running 
+Windows, you can work in groups of two or three (but groups are not 
+mandatory). Make sure when you turn in your individual answers and that 
+you indicate who was in your group. If you have trouble finding someone 
+with whom you can work, please use our web forum to coordinate. If you 
+have a computer that runs Windows, please help out those who do not. 
+Also, if you get stuck on a problem, try asking your questions in the 
+web forum.<br><br>This lab will do less hand-holding than the last lab, 
+so again, the web forum is a good resource, along with the PacketTracer 
+additional information document which can be found in the CE 80N class 
+folder when you log into an ITS computer.<br><br></p>
+</div>
+</div></fieldset>
+<fieldset class="webform-component-fieldset webform-component--network-setup form-wrapper"><legend><span class="fieldset-legend">Configuring a LAN for Money Laundary</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-markup webform-component--network-setup--p2">
+ <p><strong>Setup procedures</strong></p>
+<p>Due to your company (InternetsLOL!) bringing in outside consultants 
+(The Benevolent Operations Business Specialists---The BOBs for short) to
+ review your company's operations, your previous project of getting 
+network connectivity for Milton has been de-prioritized. You decide to 
+take the day off, but of course your day of relaxing with friends turns 
+into a new business idea. In an effort to start a side project with your
+ friends Michael and Samir, you three come up with a great money-making 
+idea: a Laundry business. You have heard that laundering is what people 
+with lots of money do, so it must be a foolproof idea. You realize that 
+your new Laundromat, Chotchkie's, will need network connectivity, so you
+ turn to your trusty Packet Tracer tool to do some preliminary 
+simulations (check out Lab 8 for PacketTracer).</p>
+<ol>
+<li>Each of these new washers and dryers generate Thermal Protection 
+Sensor (TPS) Reports which let you know if they overheat. You want to be
+ able to view and print these TPS Reports in the Laundromat, so to 
+simulate this, you should first download the <a href="https://cosmos-cluster-7.courses.soe.ucsc.edu/system/files/attachments/laundromatsetup.pkt"><strong>laundromatSetup.pkt</strong></a> file from the course webpage. The file contains a few washers and dryers, a PC, a printer, and a router.</li>
+<ol>
+<li>Your first task is to appropriately connect the devices together. 
+Every device should connect to the router via a wired or wireless 
+connection so that all data between any two devices will pass through 
+the router. While in Lab 8 you used a "Copper Crossover'' cable to 
+connect two PCs directly, in this lab you use "Copper Straight-Through''
+ cables for all wired connections. Don't connect anythin" to the 
+"Internet'' port on the router---we don't have a modem or a router in 
+this simulation to connect there. You will soon notice that some of the 
+devices have Ethernet ports while some do not. For the ones that do not 
+have Ethernet ports, you will want to connect them by configuring 
+appropriate wireless card settings on the router and the devices.</li>
+<ol>
+<li>Use Authentication for your Wireless network. I suggest WPA2-PSK as 
+this is more recent than WPA and WEP (so more secure) and more 
+user-friendly than WEP.</li>
+<li>You may use Static IP Addresses or DHCP. DHCP would be configured in
+ the GUI portion of the router's info if you choose to use it. Note that
+ the GUI portion of the router's info is the <strong>only</strong> place
+ in Packet Tracer's user interface where you need to scroll the window 
+down and press a "Save Settings'' button before closing the window.</li>
+<li><span style="color: #000000;">You eventually should find that all of
+ the wired connections will have green dots and the wireless connections
+ appear as dashed lines. This means that the physical and Data Link 
+Layer connections are working (it doesn't necessarily mean that 
+everything is correct unless you can ping each of the devices from any 
+other device).</span></li>
+</ol></ol>
+<li><span style="color: #000000;">Now that your simulated network is set
+ up, let's gather some information about it. What are the IP Addresses 
+and MAC Addresses of all the devices with IPs (Mouse-over the devices 
+for their information)? (Note that the MAC Addresses might look like 
+AABB.CCDD.EEFF in PacketTracer. In this lab, format those MAC Addresses 
+to look like this: AA:BB:CC:DD:EE:FF<br></span></li>
+</ol>
+</div>
+<fieldset class="webform-component-fieldset webform-component--network-setup--wireless-routers-lan-interface form-wrapper"><legend><span class="fieldset-legend">Wireless Router’s LAN Interface</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-textfield webform-component--network-setup--wireless-routers-lan-interface--P2-A1">
+  <label for="edit-submitted-network-setup-wireless-routers-lan-interface-p2-a1">The IP Address: </label>
+ <input id="edit-submitted-network-setup-wireless-routers-lan-interface-p2-a1" name="submitted[network_setup][wireless_routers_lan_interface][P2_A1]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--network-setup--wireless-routers-lan-interface--P2-B2">
+  <label for="edit-submitted-network-setup-wireless-routers-lan-interface-p2-b2">The MAC address: </label>
+ <input id="edit-submitted-network-setup-wireless-routers-lan-interface-p2-b2" name="submitted[network_setup][wireless_routers_lan_interface][P2_B2]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+</div></fieldset>
+<fieldset class="webform-component-fieldset webform-component--network-setup--chotchkies-pc form-wrapper"><legend><span class="fieldset-legend">Chotchkie's PC</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-textfield webform-component--network-setup--chotchkies-pc--P2-B1">
+  <label for="edit-submitted-network-setup-chotchkies-pc-p2-b1">The IP Address: </label>
+ <input id="edit-submitted-network-setup-chotchkies-pc-p2-b1" name="submitted[network_setup][chotchkies_pc][P2_B1]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--network-setup--chotchkies-pc--P2-C2">
+  <label for="edit-submitted-network-setup-chotchkies-pc-p2-c2">The MAC address: </label>
+ <input id="edit-submitted-network-setup-chotchkies-pc-p2-c2" name="submitted[network_setup][chotchkies_pc][P2_C2]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+</div></fieldset>
+<fieldset class="webform-component-fieldset webform-component--network-setup--tps-report-printer form-wrapper"><legend><span class="fieldset-legend">TPS Report Printer</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-textfield webform-component--network-setup--tps-report-printer--P2-C1">
+  <label for="edit-submitted-network-setup-tps-report-printer-p2-c1">The IP Address: </label>
+ <input id="edit-submitted-network-setup-tps-report-printer-p2-c1" name="submitted[network_setup][tps_report_printer][P2_C1]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--network-setup--tps-report-printer--P2-E2">
+  <label for="edit-submitted-network-setup-tps-report-printer-p2-e2">The MAC address: </label>
+ <input id="edit-submitted-network-setup-tps-report-printer-p2-e2" name="submitted[network_setup][tps_report_printer][P2_E2]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+</div></fieldset>
+<fieldset class="webform-component-fieldset webform-component--network-setup--washer1 form-wrapper"><legend><span class="fieldset-legend">Washer1</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-textfield webform-component--network-setup--washer1--P2-E1">
+  <label for="edit-submitted-network-setup-washer1-p2-e1">The IP Address: </label>
+ <input id="edit-submitted-network-setup-washer1-p2-e1" name="submitted[network_setup][washer1][P2_E1]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--network-setup--washer1--P2-A2">
+  <label for="edit-submitted-network-setup-washer1-p2-a2">The MAC address: </label>
+ <input id="edit-submitted-network-setup-washer1-p2-a2" name="submitted[network_setup][washer1][P2_A2]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+</div></fieldset>
+<fieldset class="webform-component-fieldset webform-component--network-setup--washer2 form-wrapper"><legend><span class="fieldset-legend">Washer2</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-textfield webform-component--network-setup--washer2--P2-D1">
+  <label for="edit-submitted-network-setup-washer2-p2-d1">The IP Address: </label>
+ <input id="edit-submitted-network-setup-washer2-p2-d1" name="submitted[network_setup][washer2][P2_D1]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--network-setup--washer2--P2-D2">
+  <label for="edit-submitted-network-setup-washer2-p2-d2">The MAC address: </label>
+ <input id="edit-submitted-network-setup-washer2-p2-d2" name="submitted[network_setup][washer2][P2_D2]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+</div></fieldset>
+<div class="form-item webform-component webform-component-textfield webform-component--network-setup--a-what-is-the-subnet-mask-of-your-network">
+  <label for="edit-submitted-network-setup-a-what-is-the-subnet-mask-of-your-network">(a) What is the Subnet Mask of your network? </label>
+ <input id="edit-submitted-network-setup-a-what-is-the-subnet-mask-of-your-network" name="submitted[network_setup][a_what_is_the_subnet_mask_of_your_network]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--network-setup--b-what-is-the-wireless-authentication-key-wep-key-or-wpa-passphrase">
+  <label for="edit-submitted-network-setup-b-what-is-the-wireless-authentication-key-wep-key-or-wpa-passphrase">(b) What is the Wireless Authentication Key (WEP Key or WPA Passphrase)? </label>
+ <input id="edit-submitted-network-setup-b-what-is-the-wireless-authentication-key-wep-key-or-wpa-passphrase" name="submitted[network_setup][b_what_is_the_wireless_authentication_key_wep_key_or_wpa_passphrase]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-markup webform-component--network-setup--p3">
+ <p><strong>(c) From the wired PC (Chotchkie's PC), ping the wired 
+devices and take an average of the average ping times. Then do the same 
+for the wireless devices.</strong></p>
+</div>
+<fieldset class="webform-component-fieldset webform-component--network-setup--p3-a form-wrapper"><legend><span class="fieldset-legend">Ping time results</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-textfield webform-component--network-setup--p3-a--wired-devices-average-ping-time-in-milliseconds-ms">
+  <label for="edit-submitted-network-setup-p3-a-wired-devices-average-ping-time-in-milliseconds-ms">Wired Devices Average Ping Time in milliseconds (ms):  </label>
+ <input id="edit-submitted-network-setup-p3-a-wired-devices-average-ping-time-in-milliseconds-ms" name="submitted[network_setup][p3_a][wired_devices_average_ping_time_in_milliseconds_ms]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--network-setup--p3-a--wireless-devices-average-ping-time-in-milliseconds-ms">
+  <label for="edit-submitted-network-setup-p3-a-wireless-devices-average-ping-time-in-milliseconds-ms">Wireless Devices Average Ping Time in milliseconds (ms):  </label>
+ <input id="edit-submitted-network-setup-p3-a-wireless-devices-average-ping-time-in-milliseconds-ms" name="submitted[network_setup][p3_a][wireless_devices_average_ping_time_in_milliseconds_ms]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+</div></fieldset>
+<div class="form-item webform-component webform-component-markup webform-component--network-setup--p4">
+ <p>3. Suppose you wanted to transmit data from the PC (Chotchkie's PC) 
+to the printer (TPS Report Printer), and the ARP cache in each device 
+was empty (think of it as if all of the devices were just powered on). 
+Also only consider the first ARP Request and the first ARP Reply that 
+are sent. <strong>Please answer the following questions by specifying device names.</strong> </p>
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--network-setup--a-which-devices-send-the-arp-request">
+  <label for="edit-submitted-network-setup-a-which-devices-send-the-arp-request">(a) Which device(s) send the ARP Request? </label>
+ <input id="edit-submitted-network-setup-a-which-devices-send-the-arp-request" name="submitted[network_setup][a_which_devices_send_the_arp_request]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--network-setup--b-which-devices-receive-the-arp-request">
+  <label for="edit-submitted-network-setup-b-which-devices-receive-the-arp-request">(b) Which device(s) receive the ARP Request? </label>
+ <input id="edit-submitted-network-setup-b-which-devices-receive-the-arp-request" name="submitted[network_setup][b_which_devices_receive_the_arp_request]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--network-setup--c-which-devices-send-the-arp-reply">
+  <label for="edit-submitted-network-setup-c-which-devices-send-the-arp-reply">(c) Which device(s) send the ARP Reply? </label>
+ <input id="edit-submitted-network-setup-c-which-devices-send-the-arp-reply" name="submitted[network_setup][c_which_devices_send_the_arp_reply]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--network-setup--d-which-devices-receive-the-arp-reply">
+  <label for="edit-submitted-network-setup-d-which-devices-receive-the-arp-reply">(d) Which device(s) receive the ARP Reply? </label>
+ <input id="edit-submitted-network-setup-d-which-devices-receive-the-arp-reply" name="submitted[network_setup][d_which_devices_receive_the_arp_reply]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-markup webform-component--network-setup--p5">
+ <p>4. Take a screenshot of your network and print it on a single page 
+(crop to just the workspace if you can), or otherwise create a labeled 
+sketch and attach it to this lab.</p>
+</div>
+<div id="edit-submitted-network-setup-please-upload-your-screenshot-here-ajax-wrapper"><div class="form-item webform-component webform-component-file webform-component--network-setup--please-upload-your-screenshot-here webform-container-inline">
+  <label for="edit-submitted-network-setup-please-upload-your-screenshot-here-upload">Please upload your screenshot here:  </label>
+ <div id="edit-submitted-network-setup-please-upload-your-screenshot-here" class="form-managed-file"><input id="edit-submitted-network-setup-please-upload-your-screenshot-here-upload" name="files[submitted_network_setup_please_upload_your_screenshot_here]" size="22" class="form-file" type="file"><input id="edit-submitted-network-setup-please-upload-your-screenshot-here-upload-button" name="submitted_network_setup_please_upload_your_screenshot_here_upload_button" value="Upload" class="form-submit ajax-processed" type="submit"><input name="submitted[network_setup][please_upload_your_screenshot_here][fid]" value="0" type="hidden">
+</div>
+ <div class="description">Files must be less than <strong>10 MB</strong>.<br>Allowed file types: <strong>gif jpg png bmp pdf</strong>.</div>
+</div>
+</div></div></fieldset>
+<fieldset class="webform-component-fieldset webform-component--troubleshooting-your-network-connection form-wrapper"><legend><span class="fieldset-legend">Troubleshooting Your Network Connection</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-markup webform-component--troubleshooting-your-network-connection--p6">
+ <p>Weeks later after giving up on opening a Laundromat since you have 
+realized that Laundromats aren't what people do to launder money 
+(although with your simulations, the business surely would have 
+succeeded!), you find out that The BOBs have given you a promotion! You 
+have been appointed to manage a team of junior-level Network Engineers, 
+and you find that this team has been trying to solve a problem with the 
+Munich, Germany branch of InternetsLOL!. They have lost network 
+connectivity to the local branch, and this needs to be fixed ASAP.</p>
+<ol>
+<li>To simulate this issue, first download the <a href="https://cosmos-cluster-7.courses.soe.ucsc.edu/system/files/attachments/internetslol-international.pkt"><strong>internetslol-international.pkt</strong></a>
+ file from the course webpage. The file contains the network setup for 
+your local branch, the Munich branch, and the connection between the two
+ branches.</li>
+<li>Since you should be familiar with PacketTracer now, record the PC 
+name and IP Address for two of the PCs (choose any one in your local 
+branch and any one in the Munich branch.</li>
+</ol>
+<p>&nbsp;</p>
+</div>
+<fieldset class="webform-component-fieldset webform-component--troubleshooting-your-network-connection--local-branch-pc form-wrapper"><legend><span class="fieldset-legend">Local Branch PC</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-textfield webform-component--troubleshooting-your-network-connection--local-branch-pc--pc-name">
+  <label for="edit-submitted-troubleshooting-your-network-connection-local-branch-pc-pc-name">PC Name: </label>
+ <input id="edit-submitted-troubleshooting-your-network-connection-local-branch-pc-pc-name" name="submitted[troubleshooting_your_network_connection][local_branch_pc][pc_name]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--troubleshooting-your-network-connection--local-branch-pc--ip-address">
+  <label for="edit-submitted-troubleshooting-your-network-connection-local-branch-pc-ip-address">IP Address: </label>
+ <input id="edit-submitted-troubleshooting-your-network-connection-local-branch-pc-ip-address" name="submitted[troubleshooting_your_network_connection][local_branch_pc][ip_address]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--troubleshooting-your-network-connection--local-branch-pc--subnet-mask">
+  <label for="edit-submitted-troubleshooting-your-network-connection-local-branch-pc-subnet-mask">Subnet Mask:  </label>
+ <input id="edit-submitted-troubleshooting-your-network-connection-local-branch-pc-subnet-mask" name="submitted[troubleshooting_your_network_connection][local_branch_pc][subnet_mask]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+</div></fieldset>
+<fieldset class="webform-component-fieldset webform-component--troubleshooting-your-network-connection--Munich-branch-pc form-wrapper"><legend><span class="fieldset-legend">Munich Branch PC</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-textfield webform-component--troubleshooting-your-network-connection--Munich-branch-pc--pc-name">
+  <label for="edit-submitted-troubleshooting-your-network-connection-munich-branch-pc-pc-name">PC Name: </label>
+ <input id="edit-submitted-troubleshooting-your-network-connection-munich-branch-pc-pc-name" name="submitted[troubleshooting_your_network_connection][Munich_branch_pc][pc_name]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--troubleshooting-your-network-connection--Munich-branch-pc--ip-address">
+  <label for="edit-submitted-troubleshooting-your-network-connection-munich-branch-pc-ip-address">IP Address: </label>
+ <input id="edit-submitted-troubleshooting-your-network-connection-munich-branch-pc-ip-address" name="submitted[troubleshooting_your_network_connection][Munich_branch_pc][ip_address]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--troubleshooting-your-network-connection--Munich-branch-pc--subnet-mask">
+  <label for="edit-submitted-troubleshooting-your-network-connection-munich-branch-pc-subnet-mask">Subnet Mask:  </label>
+ <input id="edit-submitted-troubleshooting-your-network-connection-munich-branch-pc-subnet-mask" name="submitted[troubleshooting_your_network_connection][Munich_branch_pc][subnet_mask]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+</div></fieldset>
+<fieldset class="webform-component-fieldset webform-component--troubleshooting-your-network-connection--route-ends-P form-wrapper"><legend><span class="fieldset-legend">Route Ends</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-markup webform-component--troubleshooting-your-network-connection--route-ends-P--route-end-question">
+ <p>Now try pinging the Munich PC from your Local Branch PC (it should not work yet). Try using "<strong>tracert</strong>" to see where the route ends. What IP address does the route end at? By the way, whenever either "<strong>ping</strong>" or "<strong>tracert</strong>"
+ repeatedly fails to give a response, you can end the program early by 
+pressing Control-C. That is, while holding the CTRL key, press the 
+letter C. The CTRL key should be near the Shift key on the computer 
+keyboard.)</p>
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--troubleshooting-your-network-connection--route-ends-P--route-ends">
+  <label for="edit-submitted-troubleshooting-your-network-connection-route-ends-p-route-ends">Route Ends </label>
+ <input id="edit-submitted-troubleshooting-your-network-connection-route-ends-p-route-ends" name="submitted[troubleshooting_your_network_connection][route_ends_P][route_ends]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+</div></fieldset>
+<div class="form-item webform-component webform-component-markup webform-component--troubleshooting-your-network-connection--p6-1">
+ <p>3. Now we'll investigate the routers (they are named SantaCruz and 
+Munich). Each router connects to a Branch Local Area Network (either the
+ Santa Cruz Branch, or the Munich Branch), and they also connect to each
+ other. These connections are, as you should expect, part of different 
+subnets. Since they are on different subnets, each router has two IP 
+Addresses (one for each subnet). You can find these IP Addresses by 
+clicking on each router icon and opening up the Config tab. The 
+information can be found under FastEthernet4/0, and FastEthernet5/0 
+(these are fiber connections whereas FasthEthernet0/0 and 
+FastEthernet1/0 are copper wire).</p>
+</div>
+<fieldset class="webform-component-fieldset webform-component--troubleshooting-your-network-connection--Subnet-Address-Between-the-Two-Routers form-wrapper"><legend><span class="fieldset-legend">Subnet Address Between the Two Routers</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-markup webform-component--troubleshooting-your-network-connection--Subnet-Address-Between-the-Two-Routers--subnet-between-the-routers">
+ <p>What is the Subnet Address of the network that connects the two 
+routers? If you aren't sure just by looking at the numbers, try taking 
+into account the IP Addresses you found above for the Branch PCs.</p>
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--troubleshooting-your-network-connection--Subnet-Address-Between-the-Two-Routers--Shared-Subnet-Mask">
+  <label for="edit-submitted-troubleshooting-your-network-connection-subnet-address-between-the-two-routers-shared-subnet-mask">Shared Subnet Mask: </label>
+ <input id="edit-submitted-troubleshooting-your-network-connection-subnet-address-between-the-two-routers-shared-subnet-mask" name="submitted[troubleshooting_your_network_connection][Subnet_Address_Between_the_Two_Routers][Shared_Subnet_Mask]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--troubleshooting-your-network-connection--Subnet-Address-Between-the-Two-Routers--Shared-Subnet-Address">
+  <label for="edit-submitted-troubleshooting-your-network-connection-subnet-address-between-the-two-routers-shared-subnet-address">Shared Subnet Address: </label>
+ <input id="edit-submitted-troubleshooting-your-network-connection-subnet-address-between-the-two-routers-shared-subnet-address" name="submitted[troubleshooting_your_network_connection][Subnet_Address_Between_the_Two_Routers][Shared_Subnet_Address]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+</div></fieldset>
+<div class="form-item webform-component webform-component-markup webform-component--troubleshooting-your-network-connection--p6-2">
+ <p>4. Without closing the current window (SantaCruz), under the <strong>ROUTING</strong> header, select the <strong>Static</strong>
+ tab. It is the router's job to route traffic from one subnet to the 
+next, so you need to input the information needed for the router to do 
+its routing. In its current state, SantaCruz doesn't automatically know 
+about the Munich branch, and so it doesn't know what to do with the 
+Munich Branch IP Addresses. With some more information, the routers can 
+help the two branches connect to each other.</p>
+<ol>
+<li>In the Network box, type in the Subnet Address that the Munich PC is
+ on, and below it include the Subnet Mask (in the Mask box). In the Next
+ Hop box is where the IP Address of the Munich router should go (hint: 
+this IP should be on the 100.0.0.0 network!), and then click <strong>Add</strong>. If all goes well, you should see an entry underneath Network Address.</li>
+<li>Make the same changes on the Munich router as you just did to 
+SantaCruz, except the information should be about the Santa Cruz network
+ instead.</li>
+<li>Now open up the command prompt window on the Santa Cruz PC you chose
+ earlier, and try to ping the Munich PC. Does it work? (It should. <strong>Invalid command</strong> and <strong>Usage:ping...</strong> are not valid answers). If it doesn't work, try running <strong>tracert</strong> again to trace the route between the Santa Cruz PC and the Munich PC.</li>
+</ol>
+<p>&nbsp;</p>
+</div>
+<fieldset class="webform-component-fieldset webform-component--troubleshooting-your-network-connection--number-of-hops form-wrapper"><legend><span class="fieldset-legend">Number of Hops</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-markup webform-component--troubleshooting-your-network-connection--number-of-hops--p6-2a">
+ <p><span style="color: #000000;">How many hops are there from a Santa Cruz PC to a Munich PC? (Look at the number of entries that <strong>tracert</strong> gives you. Each numbered line is an entry. Note that the answer is not 30.</span></p>
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--troubleshooting-your-network-connection--number-of-hops--p6-2a1">
+  <label for="edit-submitted-troubleshooting-your-network-connection-number-of-hops-p6-2a1">Number of hops: </label>
+ <input id="edit-submitted-troubleshooting-your-network-connection-number-of-hops-p6-2a1" name="submitted[troubleshooting_your_network_connection][number_of_hops][p6_2a1]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+</div></fieldset>
+<fieldset class="webform-component-fieldset webform-component--troubleshooting-your-network-connection--average-delay-of-each-hop form-wrapper"><legend><span class="fieldset-legend">Average Delay of Each Hop</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-markup webform-component--troubleshooting-your-network-connection--average-delay-of-each-hop--p6-2b">
+ <p><span style="color: #000000;">How long is the average delay to each 
+of the hops? Each line in the output gives you three times in 
+milliseconds which are three separate ping messages. Take the average of
+ those three times for each line. (There might be more spaces listed 
+below than you need.</span></p>
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--troubleshooting-your-network-connection--average-delay-of-each-hop--average-delay-to-hop-1">
+  <label for="edit-submitted-troubleshooting-your-network-connection-average-delay-of-each-hop-average-delay-to-hop-1">Average Delay to hop #1 </label>
+ <input id="edit-submitted-troubleshooting-your-network-connection-average-delay-of-each-hop-average-delay-to-hop-1" name="submitted[troubleshooting_your_network_connection][average_delay_of_each_hop][average_delay_to_hop_1]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--troubleshooting-your-network-connection--average-delay-of-each-hop--average-delay-to-hop-2">
+  <label for="edit-submitted-troubleshooting-your-network-connection-average-delay-of-each-hop-average-delay-to-hop-2">Average Delay to hop #2 </label>
+ <input id="edit-submitted-troubleshooting-your-network-connection-average-delay-of-each-hop-average-delay-to-hop-2" name="submitted[troubleshooting_your_network_connection][average_delay_of_each_hop][average_delay_to_hop_2]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--troubleshooting-your-network-connection--average-delay-of-each-hop--average-delay-to-hop-3">
+  <label for="edit-submitted-troubleshooting-your-network-connection-average-delay-of-each-hop-average-delay-to-hop-3">Average Delay to hop #3 </label>
+ <input id="edit-submitted-troubleshooting-your-network-connection-average-delay-of-each-hop-average-delay-to-hop-3" name="submitted[troubleshooting_your_network_connection][average_delay_of_each_hop][average_delay_to_hop_3]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--troubleshooting-your-network-connection--average-delay-of-each-hop--average-delay-to-hop-4">
+  <label for="edit-submitted-troubleshooting-your-network-connection-average-delay-of-each-hop-average-delay-to-hop-4">Average Delay to hop #4 </label>
+ <input id="edit-submitted-troubleshooting-your-network-connection-average-delay-of-each-hop-average-delay-to-hop-4" name="submitted[troubleshooting_your_network_connection][average_delay_of_each_hop][average_delay_to_hop_4]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--troubleshooting-your-network-connection--average-delay-of-each-hop--average-delay-to-hop-5">
+  <label for="edit-submitted-troubleshooting-your-network-connection-average-delay-of-each-hop-average-delay-to-hop-5">Average Delay to hop #5 </label>
+ <input id="edit-submitted-troubleshooting-your-network-connection-average-delay-of-each-hop-average-delay-to-hop-5" name="submitted[troubleshooting_your_network_connection][average_delay_of_each_hop][average_delay_to_hop_5]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+</div></fieldset>
+<fieldset class="webform-component-fieldset webform-component--troubleshooting-your-network-connection--referring-to-arp-table form-wrapper"><legend><span class="fieldset-legend">Referring to ARP Table</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-markup webform-component--troubleshooting-your-network-connection--referring-to-arp-table--arp-table">
+ <p>Which Device's MAC Address will the Santa Cruz PC have in its ARP 
+table for sending data to the Munich PC you have been testing? (Just 
+give the device name, don't worry about the actual MAC Address).</p>
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--troubleshooting-your-network-connection--referring-to-arp-table--device-name">
+  <label for="edit-submitted-troubleshooting-your-network-connection-referring-to-arp-table-device-name">Device Name: </label>
+ <input id="edit-submitted-troubleshooting-your-network-connection-referring-to-arp-table-device-name" name="submitted[troubleshooting_your_network_connection][referring_to_arp_table][device_name]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+</div></fieldset>
+<fieldset class="webform-component-fieldset webform-component--troubleshooting-your-network-connection--ping- form-wrapper"><legend><span class="fieldset-legend">Ping ... </span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-markup webform-component--troubleshooting-your-network-connection--ping---ping-address">
+ <p>Consider your pings from the Santa Cruz PC to the Munich PC. For the
+ IP Header sent, what are the values for Protocol, Source IP, and 
+Destination IP?</p>
+<p>&nbsp;</p>
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--troubleshooting-your-network-connection--ping---protocol-ie-what-layer-4-protocol-is-sent-by-ping">
+  <label for="edit-submitted-troubleshooting-your-network-connection-ping-protocol-ie-what-layer-4-protocol-is-sent-by-ping">Protocol (i.e. what Layer 4 protocol is sent by ping?): </label>
+ <input id="edit-submitted-troubleshooting-your-network-connection-ping-protocol-ie-what-layer-4-protocol-is-sent-by-ping" name="submitted[troubleshooting_your_network_connection][ping_][protocol_ie_what_layer_4_protocol_is_sent_by_ping]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--troubleshooting-your-network-connection--ping---source-ip">
+  <label for="edit-submitted-troubleshooting-your-network-connection-ping-source-ip">Source IP: </label>
+ <input id="edit-submitted-troubleshooting-your-network-connection-ping-source-ip" name="submitted[troubleshooting_your_network_connection][ping_][source_ip]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--troubleshooting-your-network-connection--ping---destination-ip">
+  <label for="edit-submitted-troubleshooting-your-network-connection-ping-destination-ip">Destination IP: </label>
+ <input id="edit-submitted-troubleshooting-your-network-connection-ping-destination-ip" name="submitted[troubleshooting_your_network_connection][ping_][destination_ip]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+</div></fieldset>
+<fieldset class="webform-component-fieldset webform-component--troubleshooting-your-network-connection--ethernet-header-of-the-packet form-wrapper"><legend><span class="fieldset-legend">Ethernet Header of the Packet</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-markup webform-component--troubleshooting-your-network-connection--ethernet-header-of-the-packet--ethernetheader">
+ <p>Now considering the Source Address and Destination Address in the 
+Ethernet Header contained in the packet from the Santa Cruz PC to the 
+SantaCruz Router, what are the device names that would be the source and
+ destinations for this packet? (Again, don't worry about the actual MAC 
+addresses, just give the device names).</p>
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--troubleshooting-your-network-connection--ethernet-header-of-the-packet--source-address-device-name">
+  <label for="edit-submitted-troubleshooting-your-network-connection-ethernet-header-of-the-packet-source-address-device-name">Source Address Device Name: </label>
+ <input id="edit-submitted-troubleshooting-your-network-connection-ethernet-header-of-the-packet-source-address-device-name" name="submitted[troubleshooting_your_network_connection][ethernet_header_of_the_packet][source_address_device_name]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-item webform-component webform-component-textfield webform-component--troubleshooting-your-network-connection--ethernet-header-of-the-packet--destination-address-device-name">
+  <label for="edit-submitted-troubleshooting-your-network-connection-ethernet-header-of-the-packet-destination-address-device-name">Destination Address Device Name: </label>
+ <input id="edit-submitted-troubleshooting-your-network-connection-ethernet-header-of-the-packet-destination-address-device-name" name="submitted[troubleshooting_your_network_connection][ethernet_header_of_the_packet][destination_address_device_name]" size="20" maxlength="128" class="form-text" type="text">
+</div>
+</div></fieldset>
+<div class="form-item webform-component webform-component-markup webform-component--troubleshooting-your-network-connection--p6-2c">
+ <p>Great job! You have figured out the network problems just in time to
+ hear the fire alarm go off. You better follow Milton's lead and head 
+out the door---I don't think this is a drill . . .</p>
+</div>
+</div></fieldset>
+<input name="details[sid]" type="hidden">
+<input name="details[page_num]" value="1" type="hidden">
+<input name="details[page_count]" value="1" type="hidden">
+<input name="details[finished]" value="0" type="hidden">
+<input name="form_build_id" value="form-atVZvdKzC9XqnwkOAmRJQIbp-Hm8EWTcdCNqBA-Eopg" type="hidden">
+<input name="form_id" value="webform_client_form_58" type="hidden">
+<div class="form-actions"><input class="webform-submit button-primary form-submit" name="op" value="Submit" type="submit"></div></div></form>  </div>
+
+  
+  
+</div>
+  </div>
+</div>
+  </div>
+</td>
+</tr>
+<tr>
+<td id="bsoe-footer" colspan="5">
+© 2014 UC Santa Cruz • All Rights Reserved<br>
+1156 High St, Santa Cruz, CA 95064 • 831-459-2158 •
+<script type="text/javascript">
+document.write(Base64.decode('PGEgaHJlZj0ibWFpbHRvOmxhcnJhYmVlQHVjc2MuZWR1Ij5sYXJyYWJlZUB1Y3NjLmVkdTwvYT4='));
+</script><a href="mailto:larrabee@ucsc.edu">larrabee@ucsc.edu</a>
+<br>
+<div id="links">
+<a href="http://www.ucsc.edu/">UCSC Home</a> •
+<a href="http://www.soe.ucsc.edu/">BSOE Home</a> •
+<a href="https://mail.google.com/a/soe.ucsc.edu/">E-Mail</a> •
+<a href="http://support.soe.ucsc.edu/">Support</a> •
+<a href="http://intranet.soe.ucsc.edu/employment">Employment</a> •
+<a href="https://cosmos-cluster-7.courses.soe.ucsc.edu/user/login?destination=node/58" rel="nofollow">Log In</a></div></td>
+</tr>
+</tbody>
+</table>
+<script type="text/javascript">initMenu();</script><div style="left: 628px; top: 155px; visibility: hidden; display: none;" id="menuItemDIV_0_1" class="dynamic_submenu"><ul style="position: relative;" id="menuItemUL_0_1" class="menu"><li id="menuItemLI_0_1" class="first expanded active-trail menu-mlid-321"><a id="menuItemA_0_1" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/home" title="The afternoon part of this COSMOS Cluster" class="active-trail">COSMOS Networking and the Internet</a></li>
+<li id="menuItemLI_1_1" class="last expanded menu-mlid-363"><a id="menuItemA_1_1" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-astronomy">COSMOS Astronomy</a></li>
+</ul></div><div style="left: 830px; top: 155px; visibility: hidden; display: none;" id="menuItemDIV_0_2" class="dynamic_submenu"><ul style="position: relative;" id="menuItemUL_0_2" class="menu"><li id="menuItemLI_0_2" class="first leaf menu-mlid-365"><a id="menuItemA_0_2" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/home" title="Redundant for flyout menu navigation">Main COSMOS Networking Page</a></li>
+<li id="menuItemLI_1_2" class="leaf menu-mlid-314"><a id="menuItemA_1_2" href="http://up.soe.ucsc.edu/class/Cosmos14/" title="Link to this class on Ubiquitous Presenter">UP</a></li>
+<li id="menuItemLI_2_2" class="leaf menu-mlid-318"><a id="menuItemA_2_2" href="https://www.youtube.com/watch?v=ry1hpm1GXVI" title="Online networking text">The TCP/IP Guide</a></li>
+<li id="menuItemLI_3_2" class="leaf menu-mlid-320"><a id="menuItemA_3_2" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-networks-internet/specific-readings-topic">Network readings by topic</a></li>
+<li id="menuItemLI_4_2" class="leaf menu-mlid-319"><a id="menuItemA_4_2" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-networks-internet/resources-learning-more" title="">Network resources for learning more</a></li>
+<li id="menuItemLI_5_2" class="last expanded active-trail menu-mlid-367"><a id="menuItemA_5_2" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-networks-internet/labs" class="active-trail">Labs</a></li>
+</ul></div><div style="left: 1032px; top: 290px; visibility: hidden; display: none;" id="menuItemDIV_0_3" class="dynamic_submenu"><ul style="position: relative;" id="menuItemUL_0_3" class="menu"><li id="menuItemLI_0_3" class="first leaf menu-mlid-366"><a id="menuItemA_0_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-1">Lab 1</a></li>
+<li id="menuItemLI_1_3" class="leaf menu-mlid-368"><a id="menuItemA_1_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/Quantization">Lab 2</a></li>
+<li id="menuItemLI_2_3" class="leaf menu-mlid-370"><a id="menuItemA_2_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-3">Lab 3</a></li>
+<li id="menuItemLI_3_3" class="leaf menu-mlid-377"><a id="menuItemA_3_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-4">Lab 4</a></li>
+<li id="menuItemLI_4_3" class="leaf menu-mlid-380"><a id="menuItemA_4_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-5">Lab 5</a></li>
+<li id="menuItemLI_5_3" class="leaf menu-mlid-382"><a id="menuItemA_5_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-6">Lab 6</a></li>
+<li id="menuItemLI_6_3" class="leaf menu-mlid-378"><a id="menuItemA_6_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-7">Lab 7</a></li>
+<li id="menuItemLI_7_3" class="leaf menu-mlid-379"><a id="menuItemA_7_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-8">Lab 8</a></li>
+<li id="menuItemLI_8_3" class="leaf active-trail active menu-mlid-381"><a id="menuItemA_8_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-9" class="active-trail active">Lab 9</a></li>
+<li id="menuItemLI_9_3" class="leaf menu-mlid-383"><a id="menuItemA_9_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-10">Lab 10</a></li>
+<li id="menuItemLI_10_3" class="leaf menu-mlid-395"><a id="menuItemA_10_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/lab-11">Lab 11</a></li>
+<li id="menuItemLI_11_3" class="leaf menu-mlid-396"><a id="menuItemA_11_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/list-public-keys-and-emails">List of public keys and emails</a></li>
+<li id="menuItemLI_12_3" class="last leaf menu-mlid-393"><a id="menuItemA_12_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-networking-and-internet/labs/files-lab">Files for lab</a></li>
+</ul></div><div style="left: 830px; top: 182px; visibility: hidden; display: none;" id="menuItemDIV_6_2" class="dynamic_submenu"><ul style="position: relative;" id="menuItemUL_6_2" class="menu"><li id="menuItemLI_6_2" class="first last expanded menu-mlid-371"><a id="menuItemA_6_2" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-astronomy/student-astronomy-projects">Student Astronomy Projects</a></li>
+</ul></div><div style="left: 1032px; top: 182px; visibility: hidden; display: none;" id="menuItemDIV_13_3" class="dynamic_submenu"><ul style="position: relative;" id="menuItemUL_13_3" class="menu"><li id="menuItemLI_13_3" class="first leaf menu-mlid-372"><a id="menuItemA_13_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-astronomy/student-astronomy-projects/eclipsing-binaries">Eclipsing Binaries</a></li>
+<li id="menuItemLI_14_3" class="leaf menu-mlid-375"><a id="menuItemA_14_3" href="http://tres-3b.weebly.com/" title="">Exoplanets</a></li>
+<li id="menuItemLI_15_3" class="leaf menu-mlid-376"><a id="menuItemA_15_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-astronomy/student-astronomy-projects/globular-clusters">Globular Clusters</a></li>
+<li id="menuItemLI_16_3" class="leaf menu-mlid-374"><a id="menuItemA_16_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-astronomy/student-astronomy-projects/metallicity">Metallicity</a></li>
+<li id="menuItemLI_17_3" class="last leaf menu-mlid-373"><a id="menuItemA_17_3" href="https://cosmos-cluster-7.courses.soe.ucsc.edu/cosmos-cluster-7/cosmos-astronomy/student-astronomy-projects/rotation-curves">Rotation Curves</a></li>
+</ul></div>
+  
+
+</body></html>
